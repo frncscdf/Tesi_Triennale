@@ -1,0 +1,117 @@
+%**************************************************************
+% Glossario
+%**************************************************************
+%\renewcommand{\glossaryname}{Glossario}
+
+\newglossaryentry{zcsg}
+{
+    name=\glslink{zcs}{ZCS},
+    text=Zimbra,
+    sort=zimbra,
+    description={Zimbra Collaboration Suite}
+}
+
+\newglossaryentry{spg}
+{
+    name=\glslink{sp}{SP},
+    text=SP,
+    sort=service provider,
+    description={Un service provider è un sistema che fornisce un servizio a degli utenti. Lo si può identificare come un sito web che eroga un certo servizio}
+}
+
+\newglossaryentry{idpg}
+{
+    name=\glslink{idp}{IdP},
+    text=IdP,
+    sort=identity provider,
+    description={Un identity provider è un sistema che crea, mantiene e gestisce le informazioni sull'identità di un utente. Si occupa di fornire il servizio di autenticazione ai \gls{spg}}
+}
+
+\newglossaryentry{okta}
+{
+    name=\glslink{okta}{Okta},
+    text=Okta,
+    sort=okta,
+    description={Okta è una società di gestione di identità e di accessi, quindi un \gls{idpg}}
+}
+
+\newglossaryentry{xmlg}
+{
+    name=\glslink{xml}{XML},
+    text=XML,
+    sort=xml,
+    description={Linguaggio di \textbf{Markup} che consente la definizione di \textbf{metadati}}
+}
+
+\newglossaryentry{samlg}
+{
+    name=\glslink{saml}{SAML},
+    text=SAML,
+    sort=saml,
+    description={SAML è un protocollo bastato su \gls{xmlg} che permette lo scambio di messaggi per effettuare autenticazione e autorizzazione tra domini distinti. Tipicamente gli attori del procollo sono un \gls{idpg} che fornisce l'identità dell'utente da autenticare e un \gls{spg} che fornisce il servizio a cui l'utente ha richiesto l'accesso. }
+}
+
+\newglossaryentry{ssog}
+{
+    name=\glslink{sso}{SSO},
+    text=Single Sign-On,
+    sort=sso,
+    description={Si tratta di un sistema di autenticazione che permette ad un utente di effettuare un'unica autenticazione, valida per più servizi e/o risorse ai quali è abilitato. Questo permette all'utente di avere un'unica credenziale valida per più servizi indipendenti}
+}
+
+\newglossaryentry{samlass}
+{
+    name=\glslink{samlass}{SAML Assertion},
+    text=SAML Assertion,
+    sort=saml assertion,
+    description={Una asserzione \gls{samlg} è un documento in formato \gls{xmlg} che contiene le informazioni sull'autenticazione e/o autorizzazione di un utente. Tale documento è solitamente generato dall'\gls{idpg} e inviato al \gls{spg}}
+}
+
+\newglossaryentry{crudg}
+{
+    name=\glslink{crud}{CRUD},
+    text=CRUD,
+    sort=crud,
+    description={Questo acronimo viene spesso usato in ambito di \textbf{database management} e indica:
+    \begin{itemize}
+        \item \textbf{Create}: creazione di un utente;
+        \item \textbf{Read}: richiesta attributi di un utente;
+        \item \textbf{Update}: aggiornamento attributi di un utente;
+        \item \textbf{Delete}: non si parla di una cancellazione vera e propria di un utente ma di \textbf{deprovisioning}, ovvero una disabilitazione dell'account di quest'ultimo o di un cambio di permessi
+    \end{itemize}}
+}
+
+\newglossaryentry{prov}
+{
+    name=\glslink{prov}{Provisioning},
+    text=Provisioning,
+    sort=provisioning,
+    description={Con il termine \textbf{provisioning} si intende, generalmente, la gestione degli utenti. Questo termine include un insieme di funzionalità riassunte dall'acronimo \gls{crudg}}
+}
+
+
+%**************************************************************
+% Acronimi
+%**************************************************************
+\renewcommand{\acronymname}{Acronimi e abbreviazioni}
+
+\newacronym[description={\glslink{zcsg}{Zimbra Collaboration Suite}}]
+    {zcs}{ZCS}{Zimbra Collaboration Suite}
+    
+\newacronym[description={\glslink{idpg}{Identity Provider}}]
+    {idp}{IdP}{Identity Provider}
+
+\newacronym[description={\glslink{spg}{Identity Provider}}]
+    {sp}{SP}{Service Provider}
+    
+\newacronym[description={\glslink{samlg}{Security Assertion Markup Language}}]
+    {saml}{SAML}{Security Assertion Markup Language}
+    
+\newacronym[description={\glslink{xmlg}{eXtensible Markup Language}}]
+    {xml}{XML}{eXtensible Markup Language}
+    
+\newacronym[description={\glslink{ssog}{Single Sign-On}}]
+    {sso}{SSO}{Single Sign-On}
+    
+\newacronym[description={\glslink{crudg}{Create-Read-Update-Delete}}]
+    {crud}{CRUD}{Create-Read-Update-Delete}

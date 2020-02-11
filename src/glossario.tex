@@ -5,24 +5,24 @@
 
 \newglossaryentry{zcsg}
 {
-    name=\glslink{zcs}{ZCS},
+    name=\glslink{zcsg}{Zimbra Collaboration},
     text=Zimbra,
     sort=zimbra,
-    description={Zimbra \textit{Collaboration}}
+    description={software collaborativo che offre servizi come la posta elettronica e calendario condiviso. \'E possibile estenderlo con nuove funzionalità tramite meccanismi chiamati \textbf{Zimlet}}
 }
 
 \newglossaryentry{spg}
 {
-    name=\glslink{sp}{SP},
-    text=SP,
+    name=\glslink{sp}{Service Provider},
+    text=service provider,
     sort=service provider,
-    description={Un \textit{service provider} è un sistema che fornisce un servizio a degli utenti. Lo si può identificare come un sito web che eroga un certo servizio}
+    description={Un \textit{service provider} ed è un sistema che fornisce un servizio a degli utenti. Lo si può identificare come un sito web che eroga un certo servizio}
 }
 
 \newglossaryentry{idpg}
 {
-    name=\glslink{idp}{IdP},
-    text=IdP,
+    name=\glslink{idp}{Identity Provider},
+    text=identity provider,
     sort=identity provider,
     description={Un \textit{identity provider} è un sistema che crea, mantiene e gestisce le informazioni sull'identità di un utente. Si occupa di fornire il servizio di autenticazione ai \gls{spg}}
 }
@@ -45,10 +45,10 @@
 
 \newglossaryentry{samlg}
 {
-    name=\glslink{saml}{SAML},
+    name=\glslink{saml}{SAML (Secuity Assertion Markup Language)},
     text=SAML,
     sort=saml,
-    description={SAML è un protocollo bastato su \gls{xmlg} che permette lo scambio di messaggi per effettuare autenticazione e autorizzazione tra domini distinti. Tipicamente gli attori del procollo sono un \gls{idpg} che fornisce l'identità dell'utente da autenticare e un \gls{spg} che fornisce il servizio a cui l'utente ha richiesto l'accesso. }
+    description={\'E un protocollo bastato su \gls{xmlg} che permette lo scambio di messaggi per effettuare autenticazione e autorizzazione tra domini distinti. Tipicamente gli attori del procollo sono un \gls{idpg} che fornisce l'identità dell'utente da autenticare e un \gls{spg} che fornisce il servizio a cui l'utente ha richiesto l'accesso. }
 }
 
 \newglossaryentry{ssog}
@@ -72,12 +72,12 @@
     name=\glslink{crud}{CRUD},
     text=CRUD,
     sort=crud,
-    description={Questo acronimo viene spesso usato in ambito di \textbf{database management} e indica:
+    description={Questo acronimo viene spesso usato in ambito di \textit{\textbf{database management}} e indica:
     \begin{itemize}
-        \item \textbf{Create}: creazione di un utente;
-        \item \textbf{Read}: richiesta attributi di un utente;
-        \item \textbf{Update}: aggiornamento attributi di un utente;
-        \item \textbf{Delete}: non si parla di una cancellazione vera e propria di un utente ma di \textbf{deprovisioning}, ovvero una disabilitazione dell'\textit{account} di quest'ultimo o di un cambio di permessi
+        \item \textit{\textbf{Create}}: creazione di un utente;
+        \item \textit{\textbf{Read}}: richiesta attributi di un utente;
+        \item \textit{\textbf{Update}}: aggiornamento attributi di un utente;
+        \item \textit{\textbf{Delete}}: non si parla di una cancellazione vera e propria di un utente ma di \textit{\textbf{deprovisioning}}, ovvero una disabilitazione dell'\textit{account} di quest'ultimo o di un cambio di permessi
     \end{itemize}}
 }
 
@@ -150,7 +150,7 @@
     name=\glslink{frameworkg}{Framework},
     text=framework,
     sort=framework,
-    description={Insieme di strumenti che definiscono la struttura di un sistema a livello concettuale. Nel caso del software si può intedendere come un'architettura sulla quale basare lo sviluppo di un prodotto. Quando si parla di modello di sviluppo si intende l'insieme di strumenti teorici che permettono di mettere in atto un concetto specifico}
+    description={Insieme di strumenti che definiscono la struttura di un sistema a livello concettuale. Nel caso del \textit{software} si può intedendere come un'architettura sulla quale basare lo sviluppo di un prodotto. Quando si parla di modello di sviluppo si intende l'insieme di strumenti teorici che permettono di mettere in atto un concetto specifico}
 }
 
 \newglossaryentry{taskg}
@@ -174,7 +174,7 @@
     name=\glslink{repositoryg}{Repository},
     text=repository,
     sort=repository,
-    description={Nell'ambito dello sviluppo software rappresenta un contenitore di codice sorgente, gestito da un sistema di versionamento}
+    description={Nell'ambito dello sviluppo \textit{software} rappresenta un contenitore di codice sorgente, gestito da un sistema di versionamento}
 }
 
 \newglossaryentry{workflowg}
@@ -206,7 +206,7 @@
     name=\glslink{cig}{Continuous Integration},
     text=continuous integration,
     sort=continuous integration,
-    description={Pratica nell'ambito dell'ingeneria del software che consiste nel effettuare \textit{merge} frequenti nella \textit{codebase}, al fine di aggiungere in modo graduale le nuove modifiche, assicurando l'assenza di conflitti tra le nuove modifiche e quelle precedenti}
+    description={Pratica nell'ambito dell'ingeneria del \textit{software} che consiste nell'integrazione frequente del lavoro svolto negli ambienti in locale degli sviluppatori verso l'ambiente condiviso, ovvero il \textit{\gls{repositoryg}} in remoto}
 }
 
 \newglossaryentry{cdg}
@@ -214,7 +214,7 @@
     name=\glslink{cdg}{Continuous Delivery},
     text=continuous delivery,
     sort=continuous delivery,
-    description={Pratica nell'ambito dell'ingeneria del software che consiste nel rilasciare la build di un software pronta per l'ambiente di produzione}
+    description={Pratica nell'ambito dell'ingeneria del \textit{software} che consiste nel rilasciare la \textit{build} di un \textit{software} pronta per l'ambiente di produzione}
 }
 
 \newglossaryentry{bugg}
@@ -222,7 +222,7 @@
     name=\glslink{bugg}{Bug},
     text=bug,
     sort=bug ,
-    description={In informatica si tratta di un errore nel software che produce risultati inattesi}
+    description={In informatica si tratta di un errore \textit{software} che produce risultati inattesi}
 }
 
 \newglossaryentry{cloudg}

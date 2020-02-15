@@ -9,7 +9,15 @@
 
 % SSO IMAGE SOURCE https://www.getkisi.com/courses/sso-guide
 
-\section{Presentazione del progetto}
+\section{Vantaggi aziendali}
+    \textbf{Zextras} ospita stage di questa tipologia da ormai diversi anni nonostante sia un'attività che richiede un quantità di tempo e impegno non indifferente poiché, costringe l'azienda a sottrarre risorse dai progetti e dalle attività in corso che, molto spesso, sono vincolate da scadenze. Tuttavia i vantaggi portati da uno strumento come lo stage sono molteplici. Per prima cosa l'azienda ha la possibilità di condurre dei progetti di ricerca che molto spesso coinvolgono l'utilizzo di nuove tecnologie, senza essere costretta a rallentare lo sviluppo dei prodotti ordinari e soprattutto riducendo il rischio di investire troppe risorse in progetti che potenzialmente potrebbero non proseguire. \\
+    Alternativamente ha la possibilità affidare ad uno studente lo sviluppo di un prodotto non particolarmente complesso al fine di inserirlo gradualmente nel mondo del lavoro (o nell'organico aziendale) e, allo stesso tempo, far risparmiare tempo al resto del \textit{team}.
+    Un altro aspetto interessante dal punto di vista aziendale è il poter entrare in contatto con studenti che, seppur privi di esperienza lavorativa, sono spesso in grado di proporre soluzioni alternative e creative a problemi comuni. I vantaggi elencati si sono effettivamente concretizzati nel tempo, infatti negli utlimi anni il \textit{team} di sviluppo ha integrato nel suo organico alcuni studenti che, una volta completato lo stage, sono rimasti a contribuire alle sfide tecnologiche che l'azienda affronta giornalmente. \\
+    Ciò significa che uno stage ben organizzato e seguito si rivela essere un vero e proprio investimento, non solo per l'azienda che lo ospita, la quale beneficerà degli \textit{output} di questa attività, ma anche per la crescita degli studenti, i quali diventeranno le figure professionali che nel futuro faranno parte dell'intera industria la quale, soprattutto negli ultimi anni, necessita di molte risorse vista la sua dinamicità.
+
+\newpage
+
+\section{Presentazione del progetto}\label{sec:progetto}
     Questo progetto nasce dall'esigenza di rendere disponibile un nuovo sistema di autenticazione per la \textit{webmail} di \gls{zcsg}, in grado di fornire il giusto connubio tra sicurezza e facilità d'uso. \textbf{Zextras} utilizza molti strumenti e servizi al suo interno, sia per lo sviluppo sia per l'amministrazione. Questi utilizzano \gls{okta} per la gestione dell'autenticazione, ciò significa che è sufficiente effettuare una sola autenticazione con il proprio account \gls{okta} per poter poi accedere a tutti i servizi ad esso collegati. \\
     Questa tipologia di autenticazione si chiama \gls{sso} e consiste nell'utilizzo di una singola credenziale che permette di accedere a più servizi. \\
     \gls{zcsg} era l'unico serivizio, uno dei più utilizzati in azienda, che non beneficiava di questa tecnica di autenticazione. Per questo motivo \textbf{Zextras} prende la decisione di esplorare la possibilità di sviluppare un sistema personalizzato che, oltre all'autenticazione base, avesse le seguenti caratteristiche:
@@ -25,13 +33,12 @@
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.75\textwidth]{immagini/sso.png}
-        \caption{Single Sign-On}
+        \caption{\textit{Single Sign-On}}
         \textbf{Fonte}:
         \href{https://developer.fourth.com/en-gb/docs/single-sign-saml}{developer.fourth.com}
         \label{fig: Single Sign-On}
     \end{figure}
 
-\newpage
 
     \subsection{Analisi stato dell'arte protocolli di autenticazione}\label{sec:att_analisi}
     %Descrizione dell'attività di analisi e di studio dei protocolli di autenticazione che ho dovuto condurre come prima attività durante lo stage.
@@ -47,7 +54,6 @@
             \item supportare \gls{zcsg} tramite il \gls{ssog} di \gls{okta} rendendo opzionale l'accesso tramite \textit{email} e \textit{password};
             \item garantire sicurezza.
         \end{itemize}
-    \newpage
     \begin{figure}[h]
         %\setlength{\textfloatsep}{1pt}
         %\setlength{\belowcaptionskip}{1pt}
@@ -58,14 +64,6 @@
         \href{https://youteam.io/blog/research-and-development-the-fourth-pillar-of-software-development/}{youteam.io}
         \label{fig: Research & Development}
     \end{figure}
-    
-\section{Vantaggi aziendali}
-    \textbf{Zextras} ospita stage di questa tipologia da ormai diversi anni nonostante sia un'attività che richiede un quantità di tempo e impegno non indifferente poiché, costringe l'azienda a sottrarre risorse dai progetti e dalle attività in corso che, molto spesso, sono vincolate da scadenze. Tuttavia i vantaggi portati da uno strumento come lo stage sono molteplici. Per prima cosa l'azienda ha la possibilità di condurre dei progetti di ricerca che molto spesso coinvolgono l'utilizzo di nuove tecnologie, senza essere costretta a rallentare lo sviluppo dei prodotti ordinari e soprattutto riducendo il rischio di investire troppe risorse in progetti che potenzialmente potrebbero non proseguire. \\
-    Alternativamente ha la possibilità affidare ad uno studente lo sviluppo di un prodotto non particolarmente complesso al fine di inserirlo gradualmente nel mondo del lavoro (o nell'organico aziendale) e, allo stesso tempo, far risparmiare tempo al resto del \textit{team}.
-    Un altro aspetto interessante dal punto di vista aziendale è il poter entrare in contatto con studenti che, seppur privi di esperienza lavorativa, sono spesso in grado di proporre soluzioni alternative e creative a problemi comuni. I vantaggi elencati si sono effettivamente concretizzati nel tempo, infatti negli utlimi anni il \textit{team} di sviluppo ha integrato nel suo organico alcuni studenti che, una volta completato lo stage, sono rimasti a contribuire alle sfide tecnologiche che l'azienda affronta giornalmente. \\
-    Ciò significa che uno stage ben organizzato e seguito si rivela essere un vero e proprio investimento, non solo per l'azienda che lo ospita, la quale beneficerà degli \textit{output} di questa attività, ma anche per la crescita degli studenti, i quali diventeranno le figure professionali che nel futuro faranno parte dell'intera industria la quale, soprattutto negli ultimi anni, necessita di molte risorse vista la sua dinamicità.
-
-\newpage
 
 \section{Vincoli}
     \subsection{Vincoli metodologici}
@@ -89,7 +87,7 @@
             \label{fig: Teamwork}
         \end{figure}
 \newpage
-    \subsection{Vincoli temporali}
+    \subsection{Vincoli temporali}\label{sec:vincoli_tempo}
     L'attività di stage prevista aveva una durata di 304 ore, da svolgere nell'arco di due mesi, suddivise in 8 settimane della durata di circa 40 ore ciascuna. L'orario di lavoro accordato con l'azienda era dal Lunedì al Venerdì dalle ore 9.00 alle 18.00. \\
     Prima dell'inizio dello stage ho pianificato, insieme al \textit{tutor}, le attività per ciascuna settimana di lavoro, facendone una stima orario per il loro completamento. Sin dal primo giorno io e il \textit{tutor} aziendale abbiamo rispettato il piano di lavoro stabilito. Tuttavia, in seguito all'attività di analisi svolta, come descritto nella sezione \secref{sec:att_analisi}, abbiamo dovuto dedicare più tempo per ottenere un prototipo base funzionante, poiché non era ancora chiaro come utilizzare il protocollo di autenticazione scelto. Nonostante un rallentamento a metà percorso, il resto dello stage ha avuto un andamento lineare che mi ha permesso di terminare il lavoro senza fretta. 
     

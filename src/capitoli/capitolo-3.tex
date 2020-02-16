@@ -10,7 +10,7 @@
 \section{Descrizione del progetto}
 Come descritto nella sezione \secref{sec:progetto} il progetto da portare a termine durante questo stage era un sistema di autenticazione personalizzato per \gls{zcsg}, che seguisse la tecnica del \gls{ssog}. \\
 
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=1\textwidth]{immagini/sso_flow.png}
         \caption{\textit{Single Sign-On flow}}
@@ -18,10 +18,9 @@ Come descritto nella sezione \secref{sec:progetto} il progetto da portare a term
         \href{https://developer.okta.com/docs/concepts/saml/#federated-identity}{developer.okta.com}
         \label{fig: Single Sign-On flow}
     \end{figure}
-
-Nel dettaglio, i miei compiti per questo progetto erano diversi. Per prima cosa dovevo trovare un protocollo di autenticazione che fosse adeguato alle esigenze dell'azienda e al problema da risolvere. Successivamente, dovevo passare alla progettazione di un sistema di autenticazione di base, che permettesse di effettuare il \textit{login} su \gls{zcsg} tramite \gls{okta}. Dal punto di vista pratico, all'utente era sufficiente cliccare su un'applicazione \textit{okta} presente nel pannello di controllo \textit{okta} oppure disponibile tramite estensione per \textit{browser}.
-
-    \begin{figure}[h]
+Nel dettaglio, la attività che dovevo svolgere per questo progetto erano diverse. Per prima cosa dovevo trovare un protocollo di autenticazione che fosse adeguato alle esigenze dell'azienda e al problema da risolvere. Successivamente, dovevo passare alla progettazione di un sistema di autenticazione di base, che permettesse di effettuare il \textit{login} su \gls{zcsg} tramite \gls{okta}. Dal punto di vista pratico, all'utente era sufficiente cliccare su un'applicazione \gls{okta} presente nel pannello di controllo \gls{okta}, oppure disponibile tramite estensione per \textit{browser}.
+\newpage
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=1\textwidth]{immagini/okta_plugin.png}
         \caption{\textit{Okta plug-in}}
@@ -29,20 +28,20 @@ Nel dettaglio, i miei compiti per questo progetto erano diversi. Per prima cosa 
         \href{https://addons.mozilla.org/en-US/firefox/addon/okta-browser-plugin/}{addons.mozilla.org}
         \label{fig: Okta plug-in}
     \end{figure}
-
+    
 Una volta effettuata l'autenticazione su \gls{okta} e premuto il pulsante relativo al \textit{login} per \gls{zcsg}, l'utente viene reindirizzato sulla \textit{webmail} di \gls{zcsg}.
-Oltre a questa funzionalità era richiesto di creare un nuovo account su \gls{zcsg} qualóra l'utente \gls{okta} che sta tentando l'accesso non ne avesse ancora uno e, allo stesso tempo, fare una mappatura tra i gruppi a cui l'utente appartiene su \gls{okta} con le \gls{distlistg} e una \gls{cosg} di \gls{zcsg}. Per fare ciò, dovevo progettare un sistema apposito per stabilire come la mappatura dovesse avvenire dato che le informazioni tra i due sistemi potevano spesso risultare incompatibili. \\
-L'architettura dell'intero sistema doveva essere un'estensione di \textbf{Zextras} che sfruttasse l'utilizzo di un \textit{handler http} ovvero un servizio che riceve delle richieste \textit{HTTP} nelle stesse modalità delle \gls{restg}. Questo \textit{handler} doveva gestire lo scambio di informazioni tra \gls{zcsg} e \gls{okta}, processarle e infine eseguire le operazioni già discusse.
+Oltre a questa funzionalità era richiesto di creare un nuovo \textit{account} su \gls{zcsg} qualóra l'utente \gls{okta} che stesse effettuando un tentativo di accesso ne fosse provvisto e, allo stesso tempo, fare una mappatura tra i gruppi ai quali l'utente appartiene su \gls{okta} con le \gls{distlistg} e una \gls{cosg} di \gls{zcsg}. Per fare ciò, dovevo progettare un sistema apposito per stabilire come la mappatura dovesse avvenire, dato che le informazioni tra i due sistemi potevano spesso risultare incompatibili. \\
+L'architettura dell'intero sistema doveva essere un'estensione di \textbf{Zextras} che sfruttasse l'utilizzo di un \textit{handler http} ovvero un servizio che riceve delle richieste \gls{httpg} nelle stesse modalità di una \gls{restg}. Questo \textit{handler} doveva gestire lo scambio di informazioni tra \gls{zcsg} e \gls{okta}, processarle e infine eseguire le operazioni descritte in precedenza.
 
 \section{Pianificazione}
-La prima pianificazione delle attività da svolgere è stata fatta da me, insieme al \textit{tutor}, prima dell'inizio dello stage per poter avere un'idea generale delle tempistiche necessarie al completamento degli obiettivi. Come descritto nella sezione \secref{sec:vincoli_tempo}, la pianificazione originaria ha subito delle leggere modifiche, causa necessità di più tempo da dedicare ad alcune attività. Inoltre, pur seguendo il piano di lavoro originale, la definizione di ciò che andava fatto ogni settimana veniva confermato una volta completato il lavoro che attualmente in corso.\\
-Infatti dopo gli incontri formali fissati dal \textit{Project Manager} in cui dovevo mostrare i progressi tramite una \gls{demog}, vi erano spesso delle nuove richieste oppure delle modifiche da effettuare a ciò che avevo presentato. Per questo motivo, dopo ciascuno di questi incontri, mi fermavo per discutere con il \textit{team} quanto emerso e decidere come agire di conseguenza. Nella prima fase, descritta nel capitolo \secref{sec:att_analisi}, mi sono dedicato allo studio individuale dei protocolli e ho gestito il mio tempo autonomamente. Ogni giorno, durante il \textit{daily scrum}, aggiornavo il \textit{team} sui miei progressi e nel resto della giornata mi consultavo con loro in caso di necessità. Dopo questa prima attività era giunto il momento di creare la prima \textit{demo} che utilizzasse correttamente il protocollo scelto. Questa si è rivelata quella che ha consumato più tempo di quanto preventivato poiché, anche il \textit{team} non aveva mai fatto uso diretto di questo protocollo.\\
-Tuttavia, una volta superato questo ostacolo, il lavoro è proseguito secondo il piano di lavoro originale con alcune accelerazioni nell'implementazioni di alcuni requisiti che si sono rivelati essere piuttosto semplici. Nella parte finale dello stage ho avuto inoltre la possibilità di eseguire delle attività fuori pianificazione, infatti ho eseguito alcune modifiche al prodotto successivamente al suo rilascio in ambiente di produzione.
+La prima pianificazione delle attività da svolgere è stata fatta da me, insieme al \textit{tutor}, prima dell'inizio dello stage, per poter avere un'idea generale delle tempistiche necessarie al completamento degli obiettivi. Come descritto nella sezione \secref{sec:vincoli_tempo}, la pianificazione originaria ha subito delle leggere modifiche, causa necessità di più tempo da dedicare ad alcune attività. Inoltre, pur seguendo il piano di lavoro originale, la pianificazione di ciò che andava fatta ogni settimana veniva confermato una volta completato il lavoro attualmente in corso.\\
+Infatti dopo gli incontri formali fissati dal \textit{Project Manager} in cui dovevo mostrare i progressi tramite una \gls{demog}, vi erano spesso delle nuove richieste oppure delle modifiche da effettuare a ciò che avevo presentato. Per questo motivo, dopo ciascuno di questi incontri, mi fermavo per discutere con il \textit{team} quanto emerso e decidere come agire di conseguenza. Nella prima fase, descritta nel capitolo \secref{sec:att_analisi}, mi sono dedicato allo studio individuale dei protocolli e ho gestito il mio tempo autonomamente. Ogni giorno, durante il \textit{daily scrum} (\secref{sec:met_svilpuppo}), aggiornavo il \textit{team} sui miei progressi e nel resto della giornata mi consultavo con loro in caso di necessità. Dopo questa prima attività era giunto il momento di creare la prima \gls{demog} che utilizzasse correttamente il protocollo scelto. Questa si è rivelata essere l'operazione che ha consumato più tempo di quanto preventivato poiché, anche il \textit{team} non aveva mai fatto uso diretto di questo protocollo e quindi non poteva darmi delle risposte risposte immediate.\\
+Tuttavia, una volta superato questo ostacolo, il lavoro è proseguito secondo il piano di lavoro originale con alcune accelerazioni nell'implementazione di alcuni requisiti che si sono rivelati essere piuttosto semplici. Nella parte finale dello stage ho avuto inoltre la possibilità di eseguire delle attività fuori pianificazione, infatti ho effettuato alcune modifiche al prodotto successivamente al suo rilascio in ambiente di produzione.
 
 
 \section{Analisi}
-Come già discusso nella sezione \secref{sec:att_analisi}, l'attività di ricerca e analisi dei protocolli di autenticazione, è stata la prima attività svolta. Infatti, nei primi giorni di stage abbiamo discusso con il \textit{team} per stabilirne le modalità. Successivamente abbiamo individuato il primo requisito principale, ovvero l'autenticazione base di un utente su \gls{zcsg} tramite l'\gls{idpg} \gls{okta}. Il resto dei requisiti sono stati analizzati nel dettaglio dopo l'implementazione del primo, poiché ci serviva avere una base di partenza funzionante, al fine di capire cosa si potesse implementare e cosa invece non fosse fattibile. \\
-Dopo aver capito le possibilità che avevamo, abbiamo stabilito che il sistema da progettare doveva essere modulare dal punto di vista degli \gls{idpg} supportati e, allo stesso tempo, dovevamo avere la possibilità di implementare dei servizi specifici per quanto riguarda l'integrazione delle configurazioni utente di \gls{zcsg} e \gls{okta}. Abbiamo dovuto prendere delle decisioni per quanto riguarda questo aspetto. Ad esempio l'associazione tra i gruppi a cui un utente \gls{okta} appartiene e la \gls{cosg} a cui il corrispettivo utente \gls{zcsg} appartiene poteva essere solo di tipo uno a uno. Per soddisfare un requisito di questo genere ho dovuto pensare ad una soluzione \textit{ad hoc} che richiedeva di avere in mano un sistema di base funzionante, capace di mettere in atto una comunicazione tra \gls{zcsg} e \gls{okta}. \\
+Come già discusso nella sezione \secref{sec:att_analisi}, l'attività di ricerca e analisi dei protocolli di autenticazione, è stata la prima ad essere portata a termine. Infatti, nei primi giorni di stage abbiamo discusso con il \textit{team} per stabilirne le modalità. Successivamente abbiamo individuato il primo requisito principale, ovvero l'autenticazione base di un utente su \gls{zcsg} tramite l'\gls{idpg} \gls{okta}. Il resto dei requisiti sono stati analizzati nel dettaglio dopo l'implementazione del primo, poiché ci serviva avere una base di partenza funzionante, al fine di capire cosa si potesse implementare e cosa invece non fosse fattibile. \\
+Dopo aver capito le possibilità che avevamo, abbiamo stabilito che il sistema da progettare doveva essere modulare dal punto di vista degli \gls{idpg} supportati e, allo stesso tempo, dovevamo avere la possibilità di implementare dei servizi specifici per quanto riguarda l'integrazione delle configurazioni utente di \gls{zcsg} e \gls{okta}. Abbiamo dovuto prendere delle decisioni per quanto riguarda questo aspetto. Ad esempio l'associazione tra i gruppi ai quali un utente appartiene su \gls{okta} e la \gls{cosg} a cui il corrispettivo utente \gls{zcsg} appartiene poteva essere solo di tipo uno a uno. Per soddisfare un requisito di questo genere ho dovuto pensare ad una soluzione \textit{ad hoc} che richiedeva di fare delle sperimentazioni con un sistema di base funzionante, capace di mettere in atto una comunicazione tra \gls{zcsg} e \gls{okta}. \\
 I requisiti raccolti in seguito all'attività di analisi sono:
 \begin{itemize}
     \setlength\itemsep{0em}
@@ -55,12 +54,13 @@ Alcuni di questi sono illustrati nella seguente tabella:
 
 \begin{center}
     \begin{table}[h]
-    \begin{tabular}{| l | p{10cm} |} % you can change the dimension according to the spacing requirements 
+    \def\arraystretch{2}
+    \begin{tabular}{| p{3cm} | p{9cm} |} % you can change the dimension according to the spacing requirements 
         \hline
         \textbf{Identificativo} & \textbf{Descrizione} \\ \hline  
         R01 & Autenticare un utente non esistente su \gls{zcsg} tramite \gls{okta}, previa creazione dell'account\\ \hline
-        R05 & Durante il processo di creazione di un nuovo utente su \gls{zcsg}, aggiungerlo alle giuste \gls{distlistg} a seconda dei gruppi a cui appartiene du \gls{okta}\\ \hline
-        R08 & Durante la fase si autenticazione su \gls{zcsg} effettuato tramite \gls{okta}, aggiornare le \gls{distlistg}, se i gruppi a cui l'utente appartiene su \gls{okta} sono cambiati\\ \hline
+        R05 & Durante il processo di creazione di un nuovo utente su \gls{zcsg}, aggiungerlo alle giuste \gls{distlistg} a seconda dei gruppi ai quali appartiene su \gls{okta}\\ \hline
+        R08 & Durante la fase si autenticazione su \gls{zcsg} effettuata tramite \gls{okta}, aggiornare le \gls{distlistg}, se i gruppi ai quali cui l'utente appartiene su \gls{okta} sono cambiati\\ \hline
         R11 & Configurazione del protocollo \gls{samlg} a livello di dominio\\ \hline
         R14 & Autenticazione a due fattori\\ \hline 
     \end{tabular}
@@ -71,7 +71,7 @@ Alcuni di questi sono illustrati nella seguente tabella:
 
 %**************************************************************
 \section{Scelta del protocollo di autenticazione}
-In seguito all'analisi condotta sui protocolli di autenticazione, accennata nella sezione \secref{sec:att_analisi}, sono emersi due protocolli di interesse, che ho proposto e discusso insieme al \textit{team}.
+In seguito all'analisi condotta sui protocolli di autenticazione, già accennata nella sezione \secref{sec:att_analisi}, sono emersi due protocolli di interesse, che ho proposto e discusso insieme al \textit{team}.
 I due protocolli individuati erano \gls{samlg} e \gls{openidg}. Di seguito illustrerò i vantaggi e gli svantaggi di ciascuno.
 
 \subsection{SAML}
@@ -80,13 +80,13 @@ I due protocolli individuati erano \gls{samlg} e \gls{openidg}. Di seguito illus
         \item Fornisce meccanismi di sicurezza nel momento in cui la connessione \textit{HTTPS} non è disponibile o potrebbe essere compromessa;
         \item Si tratta di uno dei protocolli più utilizzati e affermati sul mercato;
         \item Se implementato correttamente è molto affidabile e sicuro;
-        \item Il meccanismo chiamato \textit{federated identity} permette di ridurre i costi per la gestione delle identità degli utenti che hanno accesso a più organizzazioni.
+        \item Il meccanismo chiamato \textit{federated identity} permette di ridurre i costi per la gestione delle identità degli utenti che hanno accesso a servizi di più organizzazioni.
     \end{itemize}
     \subsubsection{Svantaggi}\label{sec:saml_svantaggi}
     \begin{itemize}
-        \item Nell'implementazione di alcuni casi d'uso è necessario effettuare dei reindirizzamenti \textit{HTTP}, che conviene eseguire con una richiesta \textit{POST}. Il problema risiede nel fatto che per poterla fare in automatico è necessario scrivere del codice in più con un altro linguaggio;
+        \item Nell'implementazione di alcuni casi d'uso è necessario effettuare dei reindirizzamenti \gls{httpg}, che conviene eseguire con una richiesta \textit{POST}. Il problema risiede nel fatto che per poterla fare in automatico è necessario scrivere del codice aggiuntivo con un altro linguaggio;
         \item Per il problema evidenziato al punto precedente, non è facile implementare questo protocollo su applicazioni native per dispositivi mobili;
-        \item Essendo un protocollo basato su \gls{xmlg}, soffre di una tipologia di attacchi chiamati \textit{XML Signature Wrapping}, che potrebbero modificare i documenti \gls{xmlg} scambiati fra le parti del protocollo;
+        \item Essendo un protocollo basato su \gls{xmlg}, soffre di una tipologia di attacchi chiamati \textit{XML Signature Wrapping}, che potrebbero modificare i documenti \gls{xmlg} scambiati tra gli interlocutori del protocollo;
         \item L'\gls{xmlschemag} del protocollo è particolarmente complesso.
     \end{itemize}
 
@@ -94,8 +94,8 @@ I due protocolli individuati erano \gls{samlg} e \gls{openidg}. Di seguito illus
     \subsubsection{Vantaggi}
     \begin{itemize}
         \setlength\itemsep{0em}
-        \item I \textit{JSON Web Token (JWT)} utilizzati per rappresentare le informazioni dell'autenticazione sono in un formato portabile e moderno e supportano diversi algoritmi di crittografia;
-        \item Essendo basato su un altro protocollo chiamato \gls{oauthg}, il quale funziona su applicazioni mobile native, permette di essere implementato su di esse;
+        \item I \textit{\gls{jsong} Web Token (JWT)} utilizzati per rappresentare le informazioni dell'autenticazione sono in un formato portabile e moderno e supportano diversi algoritmi di crittografia;
+        \item Essendo basato su un altro protocollo chiamato \gls{oauthg}, il quale funziona su applicazioni native per dispositivi mobili, permette di essere implementato facilmente su di esse;
         \item Essendo basato su un protocollo di autorizzazione, citato al punto precedente, con \gls{openidg} si ha un singolo protocollo per autenticazione e autorizzazione;
         \item Facile da implementare.
     \end{itemize}
@@ -107,35 +107,41 @@ I due protocolli individuati erano \gls{samlg} e \gls{openidg}. Di seguito illus
     \end{itemize}
 
 \subsection{Motivazioni della scelta}
-Dopo una discussione con il \textit{team} di sviluppo e il \textit{Project Manager}, abbiamo stabilito di utilizzare il protocollo \gls{samlg}. Le ragioni che ci hanno portato a sceglierlo sono le seguenti:
+Dopo una discussione con il \textit{team} di sviluppo e il \textit{Project Manager}, abbiamo preso la decisione di utilizzare il protocollo \gls{samlg}. Le ragioni che ci hanno portato a sceglierlo sono le seguenti:
 \begin{itemize}
-    \item Essendo il protocollo molto diffuso, vi erano \textit{best practice} note e una comunità di sviluppatori più esperta;
+    \item Essendo il protocollo molto diffuso, vi erano \textit{best practice} note e una comunità di sviluppatori su cui fare affidamento;
     \item \gls{okta} supporta questo protocollo facilitando la comunicazione con un servizio personalizzato che implementa \gls{samlg};
-    \item Disponibilità di una libreria scritta in \textit{Java}, il linguaggio utilizzato in azienda, già affermata e utilizzata in altre applicazioni che implementa le funzionalità base del protocollo. Tale libreria è \gls{opensg}, di fondamentale importanza visto la filosofia aziendale;
+    \item Disponibilità di una \gls{libg} scritta in \textit{Java}, il linguaggio utilizzato in azienda, già affermata e utilizzata in altre applicazioni, che implementa le funzionalità base del protocollo. Tale libreria è \gls{opensg}, di fondamentale importanza visto la filosofia aziendale;
     \item Non vi era necessità di portare questo sistema di autenticazione su dispositivi mobili ma, nel caso in futuro ci fosse la necessità di farlo, ci sarebbero delle soluzioni valide per risolvere il problema descritto nella sezione \secref{sec:saml_svantaggi}.
 \end{itemize}
 
+\newpage
+
 \subsection{Il protocollo SAML}
+\subsubsection{Attori SAML}
 Il protocollo \gls{samlg} coinvolge generalmente tre attori:
 \begin{itemize}
     \item \textit{\textbf{Service provider}}: è l'entità che fornisce il servizio all'utente, solitamente un sito \textit{web} o una risorsa disponibile su di esso. In questo progetto è la \textit{webmail} di \gls{zcsg};
-    \item \textit{\textbf{User-agent}}: è un software permette la fruizioni del contenuto ad un utente. Di solito un \textit{web browser} che renderizza i contenuti delle pagine \textit{web};
+    \item \textit{\textbf{User-agent}}: è un software permette la fruizione dei contenuti ad un utente. Di solito un \textit{web browser} che renderizza i contenuti delle pagine \textit{web};
     \item \textit{\textbf{Identity Provider}}: è l'autorità che certifica l'identità di un utente. In questo progetto questo ruolo è assunto da \gls{okta}.
 \end{itemize}
 Un esempio di come queste tre parti interagiscono è illustrato nella figura \secref{fig: Single Sign-On flow}.
+\subsubsection{Componenti SAML}
 \gls{samlg} è costituito da diversi componenti che possono essere combinati tra di loro in diversi modi, a seconda del caso d'uso richiesto dal problema da risolvere. Le principali funzioni di questi componenti sono autenticazione, gestione dell'identità e autorizzazione tra organizzazioni che abbiano stabilito un rapporto di fiducia. I principali "concetti" del protocollo sono i seguenti:
 \begin{itemize}
     \item \textit{\textbf{Assertion}}: è un documento in formato \gls{xmlg} che contiene le informazioni sull'autenticazione e/o autorizzazione di un utente. Tale documento è solitamente generato dall'\gls{idpg} e inviato al \gls{spg};
-    \item \textit{\textbf{Protocols}}: sono dei meccanismi per fare in modo che vengano ritornate delle opportune risposte \textbf{SAML} a determinate richieste \textbf{SAML};
-    \item \textit{\textbf{Bindings}}: definiscono il metodo di comunicazione a basso livello utilizzato dai partecipanti del protocollo. Per esempio permettono di specificare la comunicazione avviene tramite richieste \textit{HTTP} o \textit{SOAP};
+    \item \textit{\textbf{Protocols}}: sono dei meccanismi per fare in modo che le richieste e le risposte \gls{samlg} siano compatibili tra loro;
+    \item \textit{\textbf{Bindings}}: definiscono il metodo di comunicazione a basso livello utilizzato dai partecipanti del protocollo. Per esempio permettono di specificare la comunicazione avviene tramite richieste \gls{httpg} o \gls{soapg};
     \item \textit{\textbf{Profiles}}: i profili definiscono una particolare configurazione di \textit{assertion}, \textit{protocols} e \textit{bindings} che serve per soddisfare un caso d'uso specifico;
-    \item \textit{\textbf{Metadata}}: è un documento \gls{xmlg} che serve per condividere delle configurazioni tra le parti. Per esempio il metodo di crittografia delle asserzioni o di un insieme di attributi;
+    \item \textit{\textbf{Metadata}}: è un documento \gls{xmlg} che serve per condividere delle configurazioni tra due parti. Per esempio il metodo di crittografia delle asserzioni o di un insieme di attributi;
     \item \textit{\textbf{Authentication Context}}: è un meccanismo, definito da un \gls{xmlschemag}, che serve per descrivere la tipologia di autenticazione impiegata dall'utente quando si autentica con l'\gls{idpg}.
 \end{itemize}
 
-    \begin{figure}[h]
+\newpage
+
+    \begin{figure}[ht]
         \centering
-        \includegraphics[width=0.95\textwidth]{immagini/SAMLCore.png}
+        \includegraphics[width=0.8\textwidth]{immagini/SAMLCore.png}
         \caption{\textit{SAML Core concepts}}
         \textbf{Fonte}:
         \href{https://www.oasis-open.org/committees/download.php/27819/sstc-saml-tech-overview-2.0-cd-02.pdf}{oasis-open.org}
@@ -145,22 +151,23 @@ Un esempio di come queste tre parti interagiscono è illustrato nella figura \se
 \section{Progettazione}
 %Progettazione della soluzione proposta per l'implementazione del sistema di autenticazione
 \subsection{Configurazione applicazione Okta}
-Un'applicazione \gls{okta} è un servizio basato sullo scambio di informazioni tramite \gls{restg} tra \gls{okta} e un'altro servizio \textit{web}. Sapendo che \gls{okta} supportava il protocollo \gls{samlg} e che in azienda erano state già create altre applicazioni \gls{okta} per integrazioni con gli strumenti utilizzati internamente, abbiamo stabilito che la cosa migliore da fare per comunicare con l'\gls{idpg} fosse quella di creare una \textit{SAML application} che avesse come \gls{endpointg} l'indirizzo dell'\textit{handler HTTP} descritto nella sezione successiva.
-Di seguito un esempio di configurazione della \textit{okta application} con gli \gls{endpointg} dell'\textit{handler}.
+Un'applicazione \gls{okta} è un servizio basato sullo scambio di informazioni tramite \gls{restg} tra \gls{okta} e un'altro servizio \textit{web}. Sapendo che \gls{okta} supportava il protocollo \gls{samlg} e che in azienda erano state già create altre applicazioni \gls{okta} per integrazioni con gli strumenti utilizzati internamente, abbiamo stabilito che la cosa migliore da fare per comunicare con l'\gls{idpg} fosse quella di creare una \gls{samlg} \textit{application} che avesse come \gls{endpointg} l'indirizzo dell'\textit{handler} \gls{httpg} descritto nella sezione successiva.
+Di seguito un esempio di configurazione della \gls{samlg} \textit{application} di \gls{okta} con gli \gls{endpointg} dell'\textit{handler} \gls{httpg}.
 
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
-        \includegraphics[width=1\textwidth]{immagini/endpoints.png}
+        \includegraphics[width=0.8\textwidth]{immagini/endpoints.png}
         \caption{\textit{SAML endpoints}}
         %\textbf{Fonte}:
         %\href{https://www.oasis-open.org/committees/download.php/27819/sstc-saml-tech-overview-2.0-cd-02.pdf}{oasis-open.org}
         \label{fig: SAML endpoints}
     \end{figure}
-Essendo questa un'applicazione specifica per \gls{samlg}, era possibile specificare quali attributi dell'utente inviare all'\textit{handler} (per esempio l'anagrafica e i gruppi a cui appartiene su \gls{okta}) per avere la possibilità non solo di autenticarlo, ma anche di creare il nuovo \textit{account} su \gls{zcsg} come già speficificato nella sezione \secref{sec:progetto}. Tali informazioni vengono inviate all'\textit{handler} tramite una \gls{samlass}. Di seguito un esempio di configurazione:
-\newpage
-    \begin{figure}[h]
+    
+Essendo questa un'applicazione specifica per \gls{samlg}, era possibile specificare quali attributi dell'utente inviare all'\textit{handler } \gls{httpg} (per esempio l'anagrafica e i gruppi ai quali appartiene su \gls{okta}) per avere la possibilità non solo di autenticarlo, ma anche di creare il nuovo \textit{account} su \gls{zcsg} come già speficificato nella sezione \secref{sec:progetto}. Tali informazioni vengono inviate all'\textit{handler} \gls{httpg} tramite una \gls{samlass}. Di seguito un esempio di configurazione:
+
+    \begin{figure}[ht]
         \centering
-        \includegraphics[width=1\textwidth]{immagini/saml_attributes.png}
+        \includegraphics[width=0.8\textwidth]{immagini/saml_attributes.png}
         \caption{Attributi \textit{SAML}}
         %\textbf{Fonte}:
         %\href{https://www.oasis-open.org/committees/download.php/27819/sstc-saml-tech-overview-2.0-cd-02.pdf}{oasis-open.org}
@@ -168,19 +175,19 @@ Essendo questa un'applicazione specifica per \gls{samlg}, era possibile specific
     \end{figure}
 
 \subsection{Progettazione handler HTTP}
-I servizi \textit{web} di \textbf{Zextras} sono gestiti tramite degli \textit{handler HTTP}, ovvero delle classi \textit{Java} che restano in ascolto su uno o più \gls{endpointg} tramite i quali ricevono dei dati. Questi vengono elaborati e viene generata una risposta che può ridursi ad un'azione eseguita, un messaggio di ritorno oppure un reindirizzamento ad una certa pagina \textit{web}. In particolare l'\textit{handler} che gestiva tutte le operazioni che il mio sistema doveva svolgere, doveva ricevere una \textit{SAML Response}, cioè un documento \gls{xmlg} con una \gls{samlass} al suo interno. L'asserzione conteneva i dati dell'utente con i quali era possibile:
+I servizi \textit{web} di \textbf{Zextras} sono gestiti tramite degli \textit{handler} \gls{httpg}, ovvero delle classi \textit{Java} che restano in ascolto su uno o più \gls{endpointg} tramite i quali ricevono dei dati. Questi vengono elaborati e viene generata una risposta che può ridursi ad un'azione eseguita, un messaggio di ritorno oppure un reindirizzamento ad una certa pagina \textit{web}. In particolare l'\textit{handler} \gls{httpg} che gestiva tutte le operazioni che il mio sistema doveva svolgere, doveva ricevere una \textit{SAML Response}, cioè un documento \gls{xmlg} con una \gls{samlass} al suo interno. L'asserzione conteneva i dati dell'utente con i quali era possibile:
 \begin{itemize}
     \setlength\itemsep{0em}
     \item Autenticare l'utente;
-    \item Creare il nuovo account su \gls{zcsg} al primo tentativo di \textit{login};
+    \item Creare il nuovo \textit{account} su \gls{zcsg} al primo tentativo di \textit{login};
     \item Assegnare l'utente alla giusta \gls{cosg} e alle \gls{distlistg}.
 \end{itemize}
 \subsection{Sistema di mappatura dei gruppi Okta}
-Una volta giunti i dati all'\textit{handler HTTP} era necessario prendere una decisione su come mappare i gruppi a cui l'utente apparteva su \gls{okta} con una sola \gls{cosg} e allo stesso tempo più \gls{distlistg} di \gls{zcsg}. Purtroppo ciò non era possibile eseguire questa operazione in automatico poiché se un utente apparteneva ad un gruppo chiamato A su \gls{okta}, il sistema avrebbe dovuto inserire l'utente in una \gls{cosg} chiamata A. Il problema è analogo per le \gls{distlistg}, in quanto un gruppo di nome A doveva essere mappato sulla lista denominata "A@dominio", ma l'esistenza di tale dominio su \gls{zcsg} non era garantito. Per i motivi sopra elencati, tentare una mappatura automatica avrebbe portato ad errori e comportamenti inattesi. \\
-Ho investito un po' di tempo per cercare una soluzione e ho proposto di dare la possibilità all'amministratore di \gls{okta} e \gls{zcsg} di configurare manualmente le associazioni desiderate tramite un \textit{file} in formato \gls{jsong}. Nel caso della \gls{cosg}, la quale è unica per ciascun utente, era possibile effettuare un'associazione uno a uno tra gruppo di \gls{okta} e \gls{cosg}, a patto che questa esista su \gls{zcsg}. In caso contrario il sistema ignora l'associazione in fase di mappatura. Per quanto riguarda le \gls{distlistg}, era possibile associare un gruppo \gls{okta} con una lista di \gls{distlistg} presenti su \gls{zcsg}.
-Una volta discussa e approvata dal \textit{team} e dal \textit{Project Manager} ho messo in atto quanto descritto. Di seguito un esempio di mappatura per la \gls{cosg} e le \gls{distlistg}.
+Una volta giunti i dati all'\textit{handler} \gls{httpg} era necessario prendere una decisione su come mappare i gruppi ai quali l'utente apparteva su \gls{okta} con una sola \gls{cosg} e allo stesso tempo più \gls{distlistg} di \gls{zcsg}. Purtroppo non era possibile eseguire questa operazione in automatico poiché se un utente apparteneva ad un gruppo chiamato \texttt{A} su \gls{okta}, il sistema avrebbe dovuto inserire l'utente in una \gls{cosg} chiamata \texttt{A}. Ma non era scontata la presenza si una \gls{cosg} di nome \texttt{A} su \gls{zcsg}. Il problema è analogo per le \gls{distlistg}, in quanto un gruppo di nome \texttt{A} doveva essere mappato sulla lista denominata \texttt{A@dominio}, ma l'esistenza di tale dominio su \gls{zcsg} non era garantita. Per i motivi sopra elencati, tentare una mappatura automatica avrebbe portato ad errori e comportamenti inattesi. \\
+Ho investito un po' di tempo per cercare una soluzione e ho proposto di dare la possibilità all'amministratore di \gls{okta} e \gls{zcsg} di configurare manualmente le associazioni desiderate tramite un \textit{file} in formato \gls{jsong}. Nel caso della \gls{cosg}, la quale è unica per ciascun utente, era possibile effettuare un'associazione uno a uno tra gruppo di \gls{okta} e \gls{cosg}, a patto che questa esistesse su \gls{zcsg}. In caso contrario il sistema avrebbe ignorato l'associazione in fase di mappatura. Per quanto riguarda le \gls{distlistg}, era possibile associare un gruppo \gls{okta} con più di \gls{distlistg} presenti su \gls{zcsg}.
+Una volta discussa e approvata dal \textit{team} e dal \textit{Project Manager} ho messo implementato questa soluzione. Di seguito un esempio di mappatura per la \gls{cosg} e le \gls{distlistg}.
 
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=1\textwidth]{immagini/cosMapping.png}
         \caption{Mappatura classe di servizio}
@@ -189,7 +196,7 @@ Una volta discussa e approvata dal \textit{team} e dal \textit{Project Manager} 
         \label{fig: Mappatura classe di servizio}
     \end{figure}
     
-     \begin{figure}[h]
+     \begin{figure}[ht]
         \centering
         \includegraphics[width=1\textwidth]{immagini/distListMapping.png}
         \caption{Mappatura liste di distribuzione}
@@ -199,32 +206,92 @@ Una volta discussa e approvata dal \textit{team} e dal \textit{Project Manager} 
     \end{figure}
 
 \subsection{Configurazione Zimbra}
-La configurazione di tutto il sistema di autenticazione è stata fatta attraverso la configurazione di \gls{zcsg}, la quale offre la possibilità di definire attributi di diversi tipi, tra cui valori binari (vero o falso), stringhe e oggetti \gls{jsong}. Le mappature descritte nella sezione precedente e illustrate nelle figure \secref{fig: Mappatura classe di servizio} e \secref{fig: Mappatura liste di distribuzione} erano configurate attraverso due attributi specifici. Oltre a questi ne sono stati definiti altri, tra cui:
+La configurazione di tutto il sistema di autenticazione l'ho realizzata attraverso la configurazione di \gls{zcsg}, la quale offre la possibilità di definire attributi di diversi tipi, tra cui valori binari (vero o falso), stringhe e oggetti \gls{jsong}. Le mappature descritte nella sezione precedente e illustrate nelle figure \secref{fig: Mappatura classe di servizio} e \secref{fig: Mappatura liste di distribuzione} erano configurate attraverso due attributi specifici. Oltre a questi ne ho definiti altri, tra cui:
 \begin{itemize}
-    \item Configurazione del protocollo \gls{samlg};
+    \item Configurazione del protocollo \gls{samlg} (informazioni riguardanti \gls{idpg} e \gls{spg});
     \item Attivazione e disattivazione della creazione automatica di un nuovo \textit{account}  su \gls{zcsg};
-    \item Attivazione e disattivazione della sincronizzazione, ad ogni accesso tramite \textit{SAML}, dei gruppi \gls{okta} a cui appartiene un utente con \gls{cosg} e \gls{distlistg}.
+    \item Attivazione e disattivazione della sincronizzazione dei gruppi \gls{okta} ai quali appartiene un utente, con \gls{cosg} e \gls{distlistg} ad ogni accesso tramite \gls{samlg}.
 \end{itemize}
-Questi attributi vengono letti dall'\textit{handler} ogni volta che il sistema di autenticazione riceve una richiesta.
+Questi attributi vengono letti dall'\textit{handler} \gls{httpg} ogni volta che il sistema di autenticazione riceve una richiesta.
 
 \section{Sviluppo}
-Alcuni dettagli di rilievo per quanto riguarda la parte implementativa. In particolare ciò che ho dovuto attuare per superare alcuni ostacoli
+In questa sezione illustrerò alcuni dettagli riguardanti all'implementazione, in particolare alcuni ostacoli che ho dovuto superare per proseguire con lo sviluppo.
 \subsection{Parsing SAML assertion}
+Per poter estrapolare i dati in arrivo dalla \textit{SAML Response} di \gls{okta} era necessario avere un modo per poter effettuare il \gls{parsingg} del documento \gls{xmlg}. Tuttavia non c'era tempo a sufficienza per poter progettare e implementare da zero, un \textit{parser} in grado di gestire i documenti \gls{xmlg} generati da \gls{samlg}, poiché questi hanno una struttura molto complessa.
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=1\textwidth]{immagini/saml_response.png}
+        \caption{\textit{SAML Response}}
+        \textbf{Fonte}:
+        \href{https://www.samltool.com/generic_sso_res.php}{samltool.com}
+        \label{fig: SAML Response}
+    \end{figure}
+    
+Per fare ciò ho incluso una \gls{libg} \gls{opensg} che, data una \textit{SAML Response}, restituiva una \gls{struttdatig} contenente i dati necessari, estrapolati dai \textit{tag} \texttt{<saml:AttributeValue>} come illustrato in figura \secref{fig: SAML Response}.
+
+\newpage
+
 \subsection{Adattamento libreria HTTP}
+La \gls{libg} citata nella precedente sezione ha però introdotto un altro problema. Questa, utilizzava la gestione delle richieste e risposte \gls{httpg} tramite le classi della \gls{apig} di \textit{Java}, in particolare utilizzava il \textit{package} \texttt{javax.servlet.http} \footnote{https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/package-summary.html}. \textbf{Zextras}, invece, utilizzava un \gls{frameworkg} chiamato \textit{Netty} \footnote{https://netty.io/}, pertanto c'era una situazione di incompatibilità. Ho quindi dovuto provvedere ad adattare tutti i metodi della \gls{libg} affinché fossero compatibili con il \gls{frameworkg} utilizzato dall'azienda. \\
 
 \section{Documentazione}
-La documentazione è stata presente sin dall'inizio dell'attività di stage, rivelandosi materiale utile sia per tutto il \textit{team}, soprattutto per coloro che non hanno lavorato direttamente con me, ma che necessitano di sapere come funzionano alcuni aspetti del prodotto (per esempio i sistemisti devono sapere come effettuare le configurazioni sul \textit{server}. Inoltre è per chi ora dovrà effettuare la manutenzione dato che potrà risalire a tutto il lavoro da me svolto. Infine mi è stata molto di aiuto durante la presentazione dei miei progressi durante gli incontri con il \textit{Project Manager}.
+La documentazione ha fatto parte dei miei compiti sin dall'inizio dell'attività di stage, rivelandosi materiale utile per diversi motivi. Per tutto il \textit{team}, soprattutto per coloro che non hanno lavorato direttamente con me, ma che necessitano di sapere come funzionano alcuni aspetti del prodotto (per esempio i sistemisti devono sapere come effettuare le configurazioni sul \textit{server}). Inoltre è di fondamentale importanza per chi ora dovrà effettuare la manutenzione, dato che potrà risalire facilmente a tutto il lavoro da me svolto. Infine mi è stata molto di aiuto durante la presentazione dei miei progressi durante gli incontri con il \textit{Project Manager}.
 \subsection{Fase di ricerca}
-Durante questa fase ho documentato tutti i risultati dei miei studi in un documento  che illustrava tutti i protocolli analizzati, riportando le informazioni tecniche essenziali e discutendone vantaggi e svantaggi per ciascuno di essi. Questo documento è stato poi aggiornato fino al momento in cui ho scelto, insieme al \textit{team}, il protocollo da utilizzare.
+Durante questa fase ho documentato tutti i risultati dei miei studi in un documento  che illustrava tutti i protocolli analizzati, riportando le informazioni tecniche essenziali e discutendone vantaggi e svantaggi per ciascuno di essi. Questo documento è stato poi aggiornato fino al momento in cui, insieme al \textit{team}, abbiamo scelto il protocollo da utilizzare.
 \subsection{Codice}
-La documentazione del codice è fondamentale per due motivi: spiegare sezioni difficili da comprendere e facilitare la manutenzione a coloro che dovranno farla, soprattutto se verrà fatta da persone diverse dall'autore. Infatti in una \textit{Sprint Retrospective}, in particolare durante la scrittura dello \textit{Starfish Retrospective} (come descritto nella sezione \secref{sec:met_svilpuppo} è emerso che tutto il \textit{team} avrebbe dovuto dedicare più tempo alla documentazione del codice, scrivendola secondo le regole del \gls{javadocg}.
+La documentazione del codice è fondamentale per due motivi: spiegare sezioni di codice difficili da comprendere e facilitare la manutenzione a coloro che dovranno farla, soprattutto se verrà fatta da persone diverse dall'autore. Infatti in una \textit{Sprint Retrospective}, in particolare durante la scrittura dello \textit{Starfish Retrospective} (come descritto nella sezione \secref{sec:met_svilpuppo}) è emerso che tutto il \textit{team} avrebbe dovuto dedicare più tempo alla documentazione del codice, scrivendola secondo le regole del \gls{javadocg}.
 \subsection{Manutenzione}
 Per quanto riguarda la documentazione dell'architettura e della configurazione del prodotto, ho utilizzato \textbf{\textit{Confluence}}, come descritto nella sezione \secref{sec:doc}. Il documento, accessibile a tutti i reparti dell'azienda, era necessario ai sistemisti per poter installare e opportunamente configurare il sistema e al \textit{team}, nel caso in futuro dovesse estenderlo o apportare delle correzioni.
 
 \section{Verifica e Validazione}
-Descrizione dell'attività di verifica svolta e della validazione
 \subsection{Verifica}
-% code review descrizione e immagine
-% Mockito e Guice
+Come descritto nella sezione \secref{sec:verifica}, in azienda abbiamo attuato diverse tecniche e strumenti per verificare che i prodotti sviluppati non contenessero errori. La verifica automatica avviene tramite \textbf{Jenkins}, il quale ha una \textit{pipeline} configurata in modo da mettere in funzione il ciclo di \gls{cig} e \gls{cdg} ad ogni \textit{commit} sul \gls{repositoryg}, illustrato nella figura \secref{fig: Continuous Integration}.
+\subsubsection{Test}
+All'interno della \textit{pipeline} della \gls{cig} vi era l'esecuzione automatica delle varie tipologie di \textit{test} (per esempio test di unità e \textit{test} di integrazione). Poiché il progetto da me sviluppato interagiva con molte parti dell'architettura di \textbf{Zextras}, ho scritto solo \textit{test} di integrazione. I \textit{test} sono parte fondamentale dello sviluppo \textit{software} e meritano di essere progettati e mantenuti allo stesso modo del codice di produzione. Per fare ciò, ho utilizzato due strumenti:
+\begin{itemize}
+    \item \textbf{Mockito}: è un \gls{frameworkg} che facilita la scrittura dei \textit{test} in \textit{Java}; 
+    \item \textbf{Guice}: è un \gls{frameworkg} \gls{opensg} per il linguaggio \textit{Java}, sviluppato da \textbf{Google}, che permette di applicare in modo semplice e scalabile la \gls{depinjg}.
+\end{itemize}
+Di seguito una tabella con alcuni di essi:
+
+\begin{center}
+    \begin{table}[h]
+    \def\arraystretch{1.65}
+    \begin{tabular}{|p{3cm}|p{7cm}|p{2cm}|} % you can change the dimension according to the spacing requirements 
+        \hline
+        \textbf{Identificativo} & \textbf{Descrizione} & \textbf{Esito} \\ \hline  
+        IT01 & Se un utente è inserito in più gruppi \gls{okta} mappati con la corrispondente \gls{cosg}, allora il sistema non assegna nessun \gls{cosg} all'utente & \textcolor{ForestGreen}{Superato}\\ \hline
+        IT04 & Se la creazione automatica dell'\textit{account} è disabilitata viene mostrata una pagina di errore informativa per l'utente & \textcolor{ForestGreen}{Superato}\\ \hline
+        IT05 & Quando un utente effettua il \textit{login}, vengono aggiornate le \gls{distlistg} alle quali appartiene se i suoi gruppi di \gls{okta} sono cambiati & \textcolor{ForestGreen}{Superato}\\ \hline
+        IT07 & Se un utente tenta di autenticarsi da \gls{okta} per la prima volta, gli viene creato un nuovo \textit{account} su \gls{zcsg}, associtato al profilo \gls{okta} & \textcolor{ForestGreen}{Superato}\\ \hline
+        IT10 & Se l'utente tenta di accedere a \gls{zcsg} senza essere autenticato su \gls{okta}, viene reindirizzato sulla pagina di \textit{login} di \gls{okta} & \textcolor{ForestGreen}{Superato}\\ \hline
+    \end{tabular}
+    \caption{Tabella dei test di integrazione}
+    \end{table}
+\end{center}
+
+\subsubsection{Code review}
+Le \gls{codereviewg} rappresentano un altro strumento di verifica, in questo caso non automatica. Ad ogni nuova \textit{pull request} sul \gls{repositoryg} vengono assegnati dei revisori, con il compito di analizzare il codice scritto da un altro membro del \textit{team}. Se il codice rispetta gli standard di qualità, la \textit{pull request} viene approvata con conseguente \textit{merge} sul \textit{branch} principale del \gls{repositoryg}, altrimenti l'autore del codice deve risolvere quanto segnalato dai revisori prima di poter sottoporre il codice ad una nuova revisione. Le \gls{codereviewg} sono molto utili sia per assicurare che il codice scritto sia conforme alle norme di codifica, sia per confrontare la soluzione implementata con il resto del \textit{team}.
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=1\textwidth]{immagini/code_review.png}
+        \caption{\textit{Code review flow}}
+        \textbf{Fonte}:
+        \href{https://storage.googleapis.com/causecode-wordpress-media/2019/01/97795825-code-review-process-1024x429.png}{causecode.com}
+        \label{fig: Code review flow}
+    \end{figure}
+
 \subsection{Validazione}
 % parlare degli incontri formali e dell'ultimo incontro
+Gli incontri formali con il \textit{Project Manager} e alcuni membri del \textit{team} di sviluppo sono serviti fin da subito per controllare lo stato di avanzamento dello sviluppo del prodotto. Infatti già alla dimostrazione della prima \gls{demog} avevo implementato le funzionalità di base del sistema di autenticazione e ricevuto i primi \textit{feedback}. Da ciò ne conseguiva il tracciamento dei requisiti soddisfatti e di quelli ancora da soddisfare.
+L'ultimo incontro si è tenuto il giorno 6/12/2019 a cui hanno partecipato:
+    \begin{itemize}
+            \item Il \textit{CEO} dell'azienda;
+            \item Il \textit{Project Manager};
+            \item Il responsabile tecnico dell'azienda;
+            \item Il \textit{team} di sviluppo con il \textit{tutor} aziendale;
+            \item Il responsabile di un altro \textit{team};
+    \end{itemize}
+Durante questa riunione ho mostrato il sistema di autenticazione in azione e abbiamo discusso alcuni miglioramenti da apportare. In questa sede il responsabile tecnico ha fatto delle nuove richieste, soprattutto per quanto riguarda la configurazione, al fine di facilitare il lavoro dei sistemisti. Dopo aver messo a punto le ultime sistemazioni e aver accertato che il prodotto fosse conforme alle aspettative iniziali, il giorno 11/12/2019, abbiamo rilasciato il prodotto in produzione per l'utilizzo aziendale. \\

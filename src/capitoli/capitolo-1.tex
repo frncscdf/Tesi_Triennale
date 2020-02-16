@@ -13,7 +13,7 @@
     Nel corso degli anni è nata e cresciuta \textbf{Zextras Suite}, una raccolta di estensioni che permettono di arricchire \gls{zcsg} con nuove funzionalità utili nel suo utilizzo in ambito professionale.
     Le soluzioni proposte da \textbf{Zextras} con i sui prodotti vengono da subito apprezzate da \textbf{Synacor}, l'azienda che sviluppa e mantiene \gls{zcsg}, la quale decide di includere parte del suo codice nella versione \gls{opensg}. Attualmente i prodotti sviluppati dall'azienda vengono utilizzati da più di 100 milioni di utenti in tutto il mondo.
 
-    \begin{figure}[h]
+    \begin{figure}[ht]
             \centering
             \includegraphics[width=0.8\textwidth]{immagini/opensource.jpeg}
             \caption{\textit{Open source}}
@@ -52,7 +52,7 @@
             \item \textbf{Drive}: piattaforma per la condivisione di file e l'utilizzo di fogli di lavoro condivisi.
         \end{itemize}
         
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \includegraphics[width=0.7\textwidth]{immagini/zextras_suite.png}
             \caption{Zextras \textit{suite}}
@@ -81,7 +81,7 @@
     I processi sono un tassello di estrema importanza all'interno di un'azienda che si pone degli obiettivi ben definiti, soprattutto quando questi sono particolarmente ambiziosi e raggiungibili tramite lo sviluppo di prodotti complessi e di grandi dimensioni. Sono inoltre fondamentali qual\'{o}ra l'azienda avesse al suo interno dei reparti che svolgono mansioni molto differenti tra loro. \\
     Al fine di orchestrare e mettere in funzione tutti i settori dell'azienda affinché questi lavorino in modo coeso, è necessario ricorrere alla definizione e istanziazione di processi, i quali permettono di stabilire con precisione quali sono le attività da svolgere e il modo più strategico per portarle a termine, al fine di raggiungere gli obiettivi prefissati.
     
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=1\textwidth]{immagini/process.jpg}
         \caption{Processi}
@@ -134,7 +134,7 @@
         \item \textit{\textbf{Backlog Refinement}}: questa attività, svolta durante lo \textit{Sprint Planning}, consiste nel controllare che tutti gli \textit{item} presenti nel \textit{Product Backlog} siano pronti per essere selezionati e inseriti nello \textit{Sprint Backlog}. Ne vengono rivisti i contenuti, le priorità, le persone assegnate per il loro svolgimento e se necessario, vengono suddivisi in \textit{\gls{taskg}} più piccoli o inclusi in altri già esistenti.
     \end{itemize}
     
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=1\textwidth]{immagini/scrum.jpg}
         \caption{Scrum \textit{flow}}
@@ -170,7 +170,7 @@ Per lo sviluppo di nuove funzionalità viene utilizzato un \textit{\gls{workflow
     \item \textit{Pull request} per effettuare il \textit{merge} del codice sul \textit{branch master}, nella quale vengono inseriti alcuni membri del team come revisori, al fine di effettuare una \textit{\gls{codereviewg}} la quale permette di verificare che il codice sia in linea con gli standard di qualità.
     \item Dopo aver messo a punto le correzioni segnalate nella \textit{\gls{codereviewg}} e aver ricevuto l'approvazione dai revisori, avviene il \textit{merge} sul \textit{branch master}.
 \end{enumerate}
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.8\textwidth]{immagini/git_flow.png}
         \caption{\textit{Gitflow}}
@@ -180,14 +180,14 @@ Per lo sviluppo di nuove funzionalità viene utilizzato un \textit{\gls{workflow
 
 \newpage
 
-\subsection{Verifica}
+\subsection{Verifica}\label{sec:verifica}
     La verifiche che permettono di perseguire la qualità di prodotto avvengono tramite \textbf{Jenkins}, un \textit{automation server} che supporta la \textit{\gls{cig}} e la \textit{\gls{cdg}}.
     In questo modo è possibile automatizzare il processo di build ed esecuzione delle varie tipologie di test ad ogni commit sul \textit{\gls{repositoryg}} e rilasciare quest'ultima in ambiente di produzione.
-    \textbf{Jenkins} permette di aggiungere altre funzionalità al processo di build, per esempio l'analisi statica del codice e la rilevazione di alcune tipologie di \textit{\gls{bugg}}, \textit{code coverage} rendendolo quindi uno strumento molto flessibile e personalizzabile.
+    \textbf{Jenkins} permette di aggiungere altre funzionalità al processo di build, per esempio l'analisi statica del codice, la rilevazione di alcune tipologie di \textit{\gls{bugg}} e il \textit{code coverage}, rendendolo quindi uno strumento molto flessibile e personalizzabile.
     Prima della verifica automatizzata vengono effettuate le \textit{\gls{codereviewg}} come descritto nella sezione precedente.
     
 
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=1\textwidth]{immagini/ci.png}
         \caption{\textit{Continuous Integration}}

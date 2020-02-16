@@ -30,7 +30,7 @@
     Il fine di questo progetto era quello di uniformare il metodo di autenticazione di \gls{zcsg} rispetto a tutti gli servizi utilizzati dall'azienda e soprattutto avere un sistema personalizzato e configurabile che permette di automatizzare alcune operazioni ripetitive e dispendiose in termini di tempo.
     Per poter proporre una soluzione conforme alle esigenze emerse, ho dovuto per prima cosa condurre uno studio e un'analisi dei protocolli di autenticazione presenti sul mercato. La seconda parte invece consisteva nella progettazione e implementazione del sistema, utilizzando il protocollo ritenuto più idoneo.
     
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=0.75\textwidth]{immagini/sso.png}
         \caption{\textit{Single Sign-On}}
@@ -54,7 +54,7 @@
             \item supportare \gls{zcsg} tramite il \gls{ssog} di \gls{okta} rendendo opzionale l'accesso tramite \textit{email} e \textit{password};
             \item garantire sicurezza.
         \end{itemize}
-    \begin{figure}[h]
+    \begin{figure}[ht]
         %\setlength{\textfloatsep}{1pt}
         %\setlength{\belowcaptionskip}{1pt}
         \centering
@@ -78,7 +78,7 @@
         %\end{itemize}
         La presenza di figure appartenti a diversi settori e \textit{team} sarebbe state utile a discutere il prodotto sviluppato, sia dal punto di vista funzionale sia da quello infrastrutturale. Inoltre, ricevere un \textit{feedback} da punti di vista diversi è certamente utile per il miglioramento dell'applicazione nel suo insieme.
         
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \includegraphics[width=0.9\textwidth]{immagini/team.jpg}
             \caption{\textit{Teamwork}}
@@ -91,7 +91,7 @@
     L'attività di stage prevista aveva una durata di 304 ore, da svolgere nell'arco di due mesi, suddivise in 8 settimane della durata di circa 40 ore ciascuna. L'orario di lavoro accordato con l'azienda era dal Lunedì al Venerdì dalle ore 9.00 alle 18.00. \\
     Prima dell'inizio dello stage ho pianificato, insieme al \textit{tutor}, le attività per ciascuna settimana di lavoro, facendone una stima orario per il loro completamento. Sin dal primo giorno io e il \textit{tutor} aziendale abbiamo rispettato il piano di lavoro stabilito. Tuttavia, in seguito all'attività di analisi svolta, come descritto nella sezione \secref{sec:att_analisi}, abbiamo dovuto dedicare più tempo per ottenere un prototipo base funzionante, poiché non era ancora chiaro come utilizzare il protocollo di autenticazione scelto. Nonostante un rallentamento a metà percorso, il resto dello stage ha avuto un andamento lineare che mi ha permesso di terminare il lavoro senza fretta. 
     
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=1\textwidth]{immagini/plan.png}
         \caption{\textit{Planning}}
@@ -108,7 +108,7 @@
         \item \textbf{Docker}: è una tecnologia che permette di creare, rilasciare ed eseguire delle applicazioni utilizzando un \gls{containerg}. In questo modo l'ambiente racchiuso nel \gls{containerg} potrà essere eseguito, tramite \textit{docker}, su macchine diverse che solitamente hanno diverse configurazioni. Questo comportamente è simile alla virtualizzazione e permette di rendere gli ambienti di esecuzione solidi e deterministici. In particolare l'azienda lo utilizza per creare delle istanze di \gls{zcsg} utilizzate come ambienti di test in fase di sviluppo. La gestione dei \gls{containerg} sono gestiti tramite un servizio di nome \textbf{\textit{Portainer}}\footnote{https://www.portainer.io/}.
     \end{itemize}
 
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[width=1\textwidth]{immagini/docker.png}
         \caption{\textit{Docker workflow}}
@@ -146,7 +146,7 @@ Per poter avere un'idea dell'offerta dell'industria informatica attuale, ho part
     \item lavorare ad un progetto \gls{opensg}.
 \end{itemize}
 
-    %\begin{figure}[h]
+    %\begin{figure}[ht]
     %    \centering
     %    \includegraphics[width=1\textwidth]{immagini/learning.jpeg}
     %    \caption{\textit{Learning}}

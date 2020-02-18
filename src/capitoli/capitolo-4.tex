@@ -9,10 +9,71 @@
 
 %**************************************************************
 \section{Soddisfacimento degli obiettivi}
-Illustrazione degli obiettivi raggiunti rispetto a quelli attesi da me e dall'azienda
-%**************************************************************
+%Illustrazione degli obiettivi raggiunti rispetto a quelli attesi da me e dall'azienda
+Il bilancio degli obiettivi descritti nella sezione \secref{sec:aspettative_aziendali} raggiunti durante lo stage è riassunto nella seguente tabella:
+
+\begin{center}
+    \begin{table}[h]
+    \def\arraystretch{2}
+    \begin{tabular}{|p{9cm}|p{3cm}|} % you can change the dimension according to the spacing requirements 
+        \hline
+        \textbf{Obiettivo} & \textbf{Stato} \\ \hline  
+         Analisi stato dell’arte dei protocolli di autenticazione più diffusi & \textcolor{ForestGreen}{Soddisfatto}\\ \hline
+         Implemenazione di un sistema di autenticazione per \gls{zcsg} tramite il protocollo scelto & \textcolor{ForestGreen}{Soddisfatto}\\ \hline
+         \gls{prov} (creazione dell'\textit{account} su \gls{zcsg})& \textcolor{ForestGreen}{Soddisfatto}\\ \hline
+         Importazione dei dati dell’utente di \gls{okta} su \gls{zcsg} & \textcolor{ForestGreen}{Soddisfatto}\\ \hline
+         Flusso di autenticazione a partire sia dall’\gls{idpg} sia da \gls{zcsg} & \textcolor{ForestGreen}{Soddisfatto}\\ \hline
+         Controllo della \gls{cosg} di \gls{zcsg} tramite l’\gls{idpg} & \textcolor{ForestGreen}{Soddisfatto}\\ \hline
+         Gestione delle \gls{distlistg} di \gls{zcsg} tramite l'\gls{idpg} & \textcolor{ForestGreen}{Soddisfatto}\\ \hline
+         Autenticazione a due fattori & \textcolor{ForestGreen}{Soddisfatto}\\ \hline
+         Integrazione con \textit{WebAuthn}\footnote{\url{https://www.w3.org/TR/webauthn-2/}} & \textcolor{Red}{Non Soddisfatto}\\ \hline
+    \end{tabular}
+    \caption{Tabella degli obiettivi}
+    \end{table}
+\end{center}
+
+Come è possibile evincere dalla tabella, ho soddisfatto quasi tutti gli obiettivi prefissati. L'unico obiettivo non soddisfatto è quello relativo all'integrazione con \textit{WebAuthn}\footnote{\url{https://www.w3.org/TR/webauthn-2/}}. Il motivo deriva dal fatto che nella fase avanzata dello sviluppo, l'azienda non era più interessata ad esplorare questa integrazione. Infatti è proprio per questo motivo che ho avuto il tempo di finire tutto il resto del lavoro senza fretta, permettondomi di rilasciare il prodotto e di effettuare le correzioni successive al collaudo. \\
+Mi ritengo molto soddisfatto dei risultati ottenuti, perché nella fase iniziale di ricerca non pensavo di andare oltre l'implementazione del sistema di autenticazione base. Questo perché mi aspettavo che l'analisi dei protocolli sarebbe durata più del dovuto, lasciandomi solo il tempo necessario a creare un prototipo. 
+Inoltre come già accennato nella sezione \secref{sec:aspettative_personali} uno dei miei obiettivi era quello di lavorare ad un progetto per tutto il suo ciclo di vita e che fosse in grado di portare valore all'azienda, la quale è rimasta anch'essa sorpresa e soddisfatta degli obiettivi raggiunti.
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=1\textwidth]{immagini/success.jpg}
+        \caption{\textit{Goal}}
+        \textbf{Fonte}:
+        \href{https://brooksplanning.wordpress.com/2016/06/12/action-plan-for-success/
+}{brooksplanning.wordpress.com}
+        \label{fig: Goal}
+    \end{figure}
+
+\newpage
+
 \section{Conoscenze e abilità acquisite}
-Descrizione di tutte le conoscenze e competenze acquisite sul piano tecnico e sul mondo del lavoro
+%Descrizione di tutte le conoscenze e competenze acquisite sul piano tecnico e sul mondo del lavoro
+Questa esperienza si è rivelata molto positiva anche sotto il punto di vista delle conoscenze e competenze che ho acquisito durante i due mesi di stage.
+Queste non si limitano solo all'ambito prettamente tecnico ma riguardano anche la realtà aziendale. 
+\subsubsection{Azienda}
+Ho appreso come un'azienda caratterizza i clienti che utilizzano i suoi prodotti, un aspetto fondamentale dal punto di vista commerciale poiché per creare \textit{software} di successo è necessario che questo abbia dei clienti che lo utilizzino nel tempo. Inoltre preso parte ad un contesto aziendale che porta avanti la filosofia del \textit{software} \gls{opensg} ed è stato molto interessante vederne le dinamiche.
+
+\subsubsection{Team di sviluppo}
+Ho avuto inoltre modo di lavorare con un \textit{team} di sviluppo completo e di poter collaborare anche con altri reparti dell'azienda che si occupavano di aspetti talvolta distanti dallo sviluppo \textit{software}. Ciò mi ha portato a dover impiegare il giusto linguaggio per comunicare con persone che hanno un punto di vista sul prodotto differente dal mio.
+
+\subsubsection{Linguaggi e tecnologie}
+Dal punto di vista tecnico ho acquisito alcune conoscenze di cui mi ritengo soddisfatto. Innanzitutto ho potuto osservare e, in parte, mettere in azione in modo professionale alcune tecniche per l'utlizzo di un linguaggio di programmazione (\textit{Java}) da me conosciuto in ambito accademico. \\
+Inoltre ho compreso i vantaggi e le potenzialità di \textit{Docker}, una tecnologia che negli ultimi anni si è ampiamente diffusa sul mercato.
+
+\subsubsection{Strumenti}
+Ho visto in prima persona come avviene la gestione di un progetto costituito da molte parti e sviluppato da \textit{team} diversi. In particolare l'utilizzo di strumenti di coordinamento come \textbf{Jira} per la gestione di progetto e \textbf{Confluence} per la gestione della documentazione aziendale. \\
+Inoltre ho appreso molto dagli sviluppatori \textit{senior} del \textit{team}, i quali mi hanno mostrato come sfruttare al meglio e in modo professionale gli strumenti di sviluppo al fine di incrementare la produttività e risparmiare tempo.
+
+\subsubsection{Modo di lavorare}
+Oltre ai metodi di lavoro messi in atto dall'azienda, ho potuto sperimentare come condurre la ricerca e lo studio di nuovi argomenti, nel mio caso i protocolli, e come gestire il tempo a disposizione. Tuttavia su questo aspetto ho capito che devo migliorare il mio metodo in quanto, nonostante abbia raggiunto gli obiettivi, non era adeguato per un'analisi approfondita di ciò che stavo studiando. Infatti dopo aver terminato questa attività ho dovuto rivedere alcuni concetti che non avevo ancora compreso completamente.
 %**************************************************************
 \section{Valutazione personale}
-Valutazione personale sullo di stage in relazione all'esperienza accademica
+%Valutazione personale sullo di stage in relazione all'esperienza accademica
+Questa esperienza mi ha fatto riflettere sulla relazione tra il mondo accademico e quello del lavoro. Tutto sommato ritengo che le nozioni apprese durante il corso di laurea triennale siano state molto utili durante questa esperienza, seppur non sufficienti per certi aspetti. \\
+Credo che questo meccanismo sia abbastanza naturale poiché l'obiettivo dell'università è quello di erogare conoscenze soprattutto teoriche, necessarie per poter mettere in pratica dei concetti in modo consapevole. Inoltre, essendo il mondo dell'informatica molto ampio, non è pensabile esplorarlo in soli tre anni. \\
+Tuttavia, l'informatica è un campo molto dinamico, cresce e muta anno dopo anno portando alla luce nuovi metodi e tecnologie. Per questo motivo credo che l'offerta didattica erogata dai corsi universitari debba essere adeguatamente aggiornata per poter offrire dei contenuti che siano in linea con ciò che viene utilizzato in ambito professionale. Inoltre ho notato che molto spesso, quando viene insegnato un linguaggio o una tecnologia, capita che alcune soluzioni vengano etichettate come \textit{bad practice}, quando in realtà esistono dei casi d'uso specifici che vengono soddisfatti tramite l'applicazione di tali metodi. A tal proposito avrei preferito che alcuni corsi proponessero degli esempi meno didattici e più concreti, al fine di rendere l'apprendimento più coinvolgente ed efficace. \\
+Per esempio il modello adottato dal corso di \textit{Ingegneria del Software} potrebbe essere applicato anche agli altri corsi che prevedono un progetto, per fare in modo che lo studente abbia la possibilità di consolidare le conoscenze teoriche con l'ausilio di un progetto significativo, cercando di diminuire il divario tra le conoscenze teoriche e le applicazioni pratiche. \\
+Nel complesso sono comunque soddisfatto di ciò che mi ha dato l'università, poiché mi ha messo di fronte a nozioni e argomenti che da solo non avrei mai esplorato, anche perché spesso molti aspetti teorici vengono ignorati in campo pratico. In questo modo ho compreso che il modo migliore di risolvere problemi, talvolta complessi, sia quello di unire teoria e pratica in modo strategico. Chiaramente dopo questa esperienza sarò più aperto ad una esplorazione più ampia del mondo dell'informatica, anche dopo aver terminato gli studi. \\
+L'attività di stage mi ha pienamente convinto e lo consiglio a tutti coloro che hanno la possibilità di farlo, svolto anche in modalità diverse dalla mia, perché è importante per far capire allo studente cosa aspettarsi dal mondo del lavoro e per avere un'idea della tipologia di azienda in cui vuole lavorare.

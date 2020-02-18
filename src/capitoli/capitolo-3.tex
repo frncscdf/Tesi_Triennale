@@ -22,7 +22,7 @@ Nel dettaglio, la attività che dovevo svolgere per questo progetto erano divers
 \newpage
     \begin{figure}[ht]
         \centering
-        \includegraphics[width=1\textwidth]{immagini/okta_plugin.png}
+        \includegraphics[width=0.9\textwidth]{immagini/okta_plugin.png}
         \caption{\textit{Okta plug-in}}
         \textbf{Fonte}:
         \href{https://addons.mozilla.org/en-US/firefox/addon/okta-browser-plugin/}{addons.mozilla.org}
@@ -34,12 +34,41 @@ Oltre a questa funzionalità era richiesto di creare un nuovo \textit{account} s
 L'architettura dell'intero sistema doveva essere un'estensione di \textbf{Zextras} che sfruttasse l'utilizzo di un \textit{handler http} ovvero un servizio che riceve delle richieste \gls{httpg} nelle stesse modalità di una \gls{restg}. Questo \textit{handler} doveva gestire lo scambio di informazioni tra \gls{zcsg} e \gls{okta}, processarle e infine eseguire le operazioni descritte in precedenza.
 
 \section{Pianificazione}
-La prima pianificazione delle attività da svolgere è stata fatta da me, insieme al \textit{tutor}, prima dell'inizio dello stage, per poter avere un'idea generale delle tempistiche necessarie al completamento degli obiettivi. Come descritto nella sezione \secref{sec:vincoli_tempo}, la pianificazione originaria ha subito delle leggere modifiche, causa necessità di più tempo da dedicare ad alcune attività. Inoltre, pur seguendo il piano di lavoro originale, la pianificazione di ciò che andava fatta ogni settimana veniva confermato una volta completato il lavoro attualmente in corso.\\
-Infatti dopo gli incontri formali fissati dal \textit{Project Manager} in cui dovevo mostrare i progressi tramite una \gls{demog}, vi erano spesso delle nuove richieste oppure delle modifiche da effettuare a ciò che avevo presentato. Per questo motivo, dopo ciascuno di questi incontri, mi fermavo per discutere con il \textit{team} quanto emerso e decidere come agire di conseguenza. Nella prima fase, descritta nel capitolo \secref{sec:att_analisi}, mi sono dedicato allo studio individuale dei protocolli e ho gestito il mio tempo autonomamente. Ogni giorno, durante il \textit{daily scrum} (\secref{sec:met_svilpuppo}), aggiornavo il \textit{team} sui miei progressi e nel resto della giornata mi consultavo con loro in caso di necessità. Dopo questa prima attività era giunto il momento di creare la prima \gls{demog} che utilizzasse correttamente il protocollo scelto. Questa si è rivelata essere l'operazione che ha consumato più tempo di quanto preventivato poiché, anche il \textit{team} non aveva mai fatto uso diretto di questo protocollo e quindi non poteva darmi delle risposte risposte immediate.\\
+La prima pianificazione delle attività da svolgere è stata fatta da me, insieme al \textit{tutor}, prima dell'inizio dello stage, per poter avere un'idea generale delle tempistiche necessarie al completamento degli obiettivi. Come descritto nella sezione \secref{sec:vincoli_tempo}, la pianificazione originaria ha subito delle leggere modifiche, causa necessità di più tempo da dedicare ad alcune attività. Inoltre, pur seguendo il piano di lavoro originale, la pianificazione di ciò che andava fatta ogni settimana veniva confermato una volta completato il lavoro attualmente in corso.
+Infatti dopo gli incontri formali fissati dal \textit{Project Manager} in cui dovevo mostrare i progressi tramite una \gls{demog}, vi erano spesso delle nuove richieste oppure delle modifiche da effettuare a ciò che avevo presentato. Per questo motivo, dopo ciascuno di questi incontri, mi fermavo per discutere con il \textit{team} quanto emerso e decidere come agire di conseguenza. \\
+Il lavoro da svolgere era suddiviso in due attività principali: l'analisi dei protocolli di autenticazione più diffusi sul mercato, seguita dalla progettazione e implementazione del sistema di autenticazione che utilizzasse il protocollo scelto.
+\subsection{Analisi stato dell'arte protocolli di autenticazione}\label{sec:att_analisi}
+    La prima attività che ho dovuto svolgere era la ricerca e lo studio dei protocolli di autenticazione più diffusi e utilizzati sul mercato. L'azienda conosceva già alcuni di questi, ma voleva avere un'analisi approfondita e degli esempi del loro utilizzo. Inoltre poteva rivelarsi una valida occasione per scoprire nuovi possibili protocolli adatti all'implementazione del sistema di autenticazione. \\
+    L'azienda ha quindi richiesto di redigere un documento che riportasse tutti i risultati delle mie ricerche, in particolare l'analisi dei pro e dei contro di ciascun protocollo e la sua applicabilità al problema da risolvere.
+    Durante questo periodo mi sono dedicato allo studio individuale dei protocolli e ho gestito il mio tempo autonomamente. Ogni giorno, durante il \textit{daily scrum} (\secref{sec:met_svilpuppo}), aggiornavo il \textit{team} sui miei progressi e nel resto della giornata mi consultavo con loro in caso di necessità.
+
+    \subsection{Progettazione di un sistema di autenticazione personalizzato} \label{sec:att_progett}
+        In seguito all'analisi svolta, il secondo obiettivo dello stage era la progettazione, seguita dall'implementazione, di un sistema di autenticazione per \gls{zcsg} utilizzando il protocollo scelto da me, guidato dal \textit{team} di sviluppo. Il sistema di autenticazione doveva essere in grado di:
+        \begin{itemize}
+            \setlength\itemsep{0em}
+            \item utilizzare \gls{okta} come \gls{idpg};
+            \item supportare altri \gls{idpg} che utilizzato lo stesso protocollo;
+            \item supportare \gls{zcsg} tramite il \gls{ssog} di \gls{okta} rendendo opzionale l'accesso tramite \textit{email} e \textit{password};
+            \item garantire sicurezza.
+        \end{itemize}
+    \begin{figure}[ht]
+        %\setlength{\textfloatsep}{1pt}
+        %\setlength{\belowcaptionskip}{1pt}
+        \centering
+        \includegraphics[width=0.7\textwidth]{immagini/rd.jpg}
+        \caption{\textit{Research \& Development}}
+        \textbf{Fonte}:
+        \href{https://youteam.io/blog/research-and-development-the-fourth-pillar-of-software-development/}{youteam.io}
+        \label{fig: Research & Development}
+    \end{figure}
+
+\newpage
+
+La seconda attività, descritta nella sezione \secref{sec:att_progett}, si è rivelata essere quella che ha consumato più tempo di quanto preventivato poiché, anche il \textit{team} non aveva mai fatto uso diretto di questo protocollo e quindi non poteva darmi delle risposte risposte immediate.\\
 Tuttavia, una volta superato questo ostacolo, il lavoro è proseguito secondo il piano di lavoro originale con alcune accelerazioni nell'implementazione di alcuni requisiti che si sono rivelati essere piuttosto semplici. Nella parte finale dello stage ho avuto inoltre la possibilità di eseguire delle attività fuori pianificazione, infatti ho effettuato alcune modifiche al prodotto successivamente al suo rilascio in ambiente di produzione.
 
 
-\section{Analisi}
+\section{Analisi}\label{sec:requisiti}
 Come già discusso nella sezione \secref{sec:att_analisi}, l'attività di ricerca e analisi dei protocolli di autenticazione, è stata la prima ad essere portata a termine. Infatti, nei primi giorni di stage abbiamo discusso con il \textit{team} per stabilirne le modalità. Successivamente abbiamo individuato il primo requisito principale, ovvero l'autenticazione base di un utente su \gls{zcsg} tramite l'\gls{idpg} \gls{okta}. Il resto dei requisiti sono stati analizzati nel dettaglio dopo l'implementazione del primo, poiché ci serviva avere una base di partenza funzionante, al fine di capire cosa si potesse implementare e cosa invece non fosse fattibile. \\
 Dopo aver capito le possibilità che avevamo, abbiamo stabilito che il sistema da progettare doveva essere modulare dal punto di vista degli \gls{idpg} supportati e, allo stesso tempo, dovevamo avere la possibilità di implementare dei servizi specifici per quanto riguarda l'integrazione delle configurazioni utente di \gls{zcsg} e \gls{okta}. Abbiamo dovuto prendere delle decisioni per quanto riguarda questo aspetto. Ad esempio l'associazione tra i gruppi ai quali un utente appartiene su \gls{okta} e la \gls{cosg} a cui il corrispettivo utente \gls{zcsg} appartiene poteva essere solo di tipo uno a uno. Per soddisfare un requisito di questo genere ho dovuto pensare ad una soluzione \textit{ad hoc} che richiedeva di fare delle sperimentazioni con un sistema di base funzionante, capace di mettere in atto una comunicazione tra \gls{zcsg} e \gls{okta}. \\
 I requisiti raccolti in seguito all'attività di analisi sono:
@@ -52,6 +81,8 @@ I requisiti raccolti in seguito all'attività di analisi sono:
  
 Alcuni di questi sono illustrati nella seguente tabella:
 
+\newpage
+
 \begin{center}
     \begin{table}[h]
     \def\arraystretch{2}
@@ -61,20 +92,19 @@ Alcuni di questi sono illustrati nella seguente tabella:
         R01 & Autenticare un utente non esistente su \gls{zcsg} tramite \gls{okta}, previa creazione dell'account\\ \hline
         R05 & Durante il processo di creazione di un nuovo utente su \gls{zcsg}, aggiungerlo alle giuste \gls{distlistg} a seconda dei gruppi ai quali appartiene su \gls{okta}\\ \hline
         R08 & Durante la fase si autenticazione su \gls{zcsg} effettuata tramite \gls{okta}, aggiornare le \gls{distlistg}, se i gruppi ai quali cui l'utente appartiene su \gls{okta} sono cambiati\\ \hline
-        R11 & Configurazione del protocollo \gls{samlg} a livello di dominio\\ \hline
+        R11 & Configurazione del protocollo \gls{saml} a livello di dominio\\ \hline
         R14 & Autenticazione a due fattori\\ \hline 
     \end{tabular}
-    \caption{Tabella dei requisiti}
+    \caption{Tabella parziale dei requisiti}
     \end{table}
 \end{center}
-\newpage
 
 %**************************************************************
 \section{Scelta del protocollo di autenticazione}
 In seguito all'analisi condotta sui protocolli di autenticazione, già accennata nella sezione \secref{sec:att_analisi}, sono emersi due protocolli di interesse, che ho proposto e discusso insieme al \textit{team}.
 I due protocolli individuati erano \gls{samlg} e \gls{openidg}. Di seguito illustrerò i vantaggi e gli svantaggi di ciascuno.
 
-\subsection{SAML}
+\subsection{SAML (Security Assertion Markup Language)}
     \subsubsection{Vantaggi}
     \begin{itemize}
         \item Fornisce meccanismi di sicurezza nel momento in cui la connessione \textit{HTTPS} non è disponibile o potrebbe essere compromessa;
@@ -114,8 +144,6 @@ Dopo una discussione con il \textit{team} di sviluppo e il \textit{Project Manag
     \item Disponibilità di una \gls{libg} scritta in \textit{Java}, il linguaggio utilizzato in azienda, già affermata e utilizzata in altre applicazioni, che implementa le funzionalità base del protocollo. Tale libreria è \gls{opensg}, di fondamentale importanza visto la filosofia aziendale;
     \item Non vi era necessità di portare questo sistema di autenticazione su dispositivi mobili ma, nel caso in futuro ci fosse la necessità di farlo, ci sarebbero delle soluzioni valide per risolvere il problema descritto nella sezione \secref{sec:saml_svantaggi}.
 \end{itemize}
-
-\newpage
 
 \subsection{Il protocollo SAML}
 \subsubsection{Attori SAML}
@@ -216,7 +244,7 @@ Questi attributi vengono letti dall'\textit{handler} \gls{httpg} ogni volta che 
 
 \section{Sviluppo}
 In questa sezione illustrerò alcuni dettagli riguardanti all'implementazione, in particolare alcuni ostacoli che ho dovuto superare per proseguire con lo sviluppo.
-\subsection{Parsing SAML assertion}
+\subsection{Libreria SAML} \label{sec:libreria}
 Per poter estrapolare i dati in arrivo dalla \textit{SAML Response} di \gls{okta} era necessario avere un modo per poter effettuare il \gls{parsingg} del documento \gls{xmlg}. Tuttavia non c'era tempo a sufficienza per poter progettare e implementare da zero, un \textit{parser} in grado di gestire i documenti \gls{xmlg} generati da \gls{samlg}, poiché questi hanno una struttura molto complessa.
 
     \begin{figure}[ht]
@@ -232,23 +260,25 @@ Per fare ciò ho incluso una \gls{libg} \gls{opensg} che, data una \textit{SAML 
 
 \newpage
 
-\subsection{Adattamento libreria HTTP}
-La \gls{libg} citata nella precedente sezione ha però introdotto un altro problema. Questa, utilizzava la gestione delle richieste e risposte \gls{httpg} tramite le classi della \gls{apig} di \textit{Java}, in particolare utilizzava il \textit{package} \texttt{javax.servlet.http} \footnote{https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/package-summary.html}. \textbf{Zextras}, invece, utilizzava un \gls{frameworkg} chiamato \textit{Netty} \footnote{https://netty.io/}, pertanto c'era una situazione di incompatibilità. Ho quindi dovuto provvedere ad adattare tutti i metodi della \gls{libg} affinché fossero compatibili con il \gls{frameworkg} utilizzato dall'azienda. \\
+Tuttavia, l'introduzione di questa libreria ha portato alla luce nuove problematiche. Questa, utilizzava la gestione delle richieste e risposte \gls{httpg} tramite le classi della \gls{apig} di \textit{Java}, in particolare utilizzava il \textit{package} \texttt{javax.servlet.http} \footnote{https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/package-summary.html}. \textbf{Zextras}, invece, utilizzava un \gls{frameworkg} chiamato \textit{Netty} \footnote{https://netty.io/}, pertanto c'era una situazione di incompatibilità. Ho quindi dovuto provvedere ad adattare tutti i metodi della \gls{libg} affinché fossero compatibili con il \gls{frameworkg} utilizzato dall'azienda. \\
 
 \section{Documentazione}
 La documentazione ha fatto parte dei miei compiti sin dall'inizio dell'attività di stage, rivelandosi materiale utile per diversi motivi. Per tutto il \textit{team}, soprattutto per coloro che non hanno lavorato direttamente con me, ma che necessitano di sapere come funzionano alcuni aspetti del prodotto (per esempio i sistemisti devono sapere come effettuare le configurazioni sul \textit{server}). Inoltre è di fondamentale importanza per chi ora dovrà effettuare la manutenzione, dato che potrà risalire facilmente a tutto il lavoro da me svolto. Infine mi è stata molto di aiuto durante la presentazione dei miei progressi durante gli incontri con il \textit{Project Manager}.
-\subsection{Fase di ricerca}
-Durante questa fase ho documentato tutti i risultati dei miei studi in un documento  che illustrava tutti i protocolli analizzati, riportando le informazioni tecniche essenziali e discutendone vantaggi e svantaggi per ciascuno di essi. Questo documento è stato poi aggiornato fino al momento in cui, insieme al \textit{team}, abbiamo scelto il protocollo da utilizzare.
-\subsection{Codice}
+
+\subsection{Documenti tecnici e manuali}
+Durante l'attività descritta nella sezione \secref{sec:att_analisi}, ho documentato tutti i risultati dei miei studi in un documento che illustrava tutti i protocolli analizzati, riportando le informazioni tecniche essenziali e discutendone vantaggi e svantaggi per ciascuno di essi. Questo documento è stato poi aggiornato fino al momento in cui, insieme al \textit{team}, abbiamo scelto il protocollo da utilizzare. \\
+Per quanto riguarda la documentazione del prodotto sviluppato, ho scritto un manuale con informazioni circa la progettazione del sistema di autenticazione e i passi per poterlo configurare correttamente. Il documento, accessibile a tutti i reparti dell'azienda, era necessario ai sistemisti per poter installare e opportunamente configurare il sistema e al \textit{team}, nel caso in futuro dovesse estenderlo o apportare delle correzioni.
+Lo strumento utilizzato per la gestione di questi documenti è \textbf{\textit{Confluence}}, come descritto nella sezione \secref{sec:doc}.
+
+\subsection{Codice sorgente}
 La documentazione del codice è fondamentale per due motivi: spiegare sezioni di codice difficili da comprendere e facilitare la manutenzione a coloro che dovranno farla, soprattutto se verrà fatta da persone diverse dall'autore. Infatti in una \textit{Sprint Retrospective}, in particolare durante la scrittura dello \textit{Starfish Retrospective} (come descritto nella sezione \secref{sec:met_svilpuppo}) è emerso che tutto il \textit{team} avrebbe dovuto dedicare più tempo alla documentazione del codice, scrivendola secondo le regole del \gls{javadocg}.
-\subsection{Manutenzione}
-Per quanto riguarda la documentazione dell'architettura e della configurazione del prodotto, ho utilizzato \textbf{\textit{Confluence}}, come descritto nella sezione \secref{sec:doc}. Il documento, accessibile a tutti i reparti dell'azienda, era necessario ai sistemisti per poter installare e opportunamente configurare il sistema e al \textit{team}, nel caso in futuro dovesse estenderlo o apportare delle correzioni.
+
 
 \section{Verifica e Validazione}
 \subsection{Verifica}
 Come descritto nella sezione \secref{sec:verifica}, in azienda abbiamo attuato diverse tecniche e strumenti per verificare che i prodotti sviluppati non contenessero errori. La verifica automatica avviene tramite \textbf{Jenkins}, il quale ha una \textit{pipeline} configurata in modo da mettere in funzione il ciclo di \gls{cig} e \gls{cdg} ad ogni \textit{commit} sul \gls{repositoryg}, illustrato nella figura \secref{fig: Continuous Integration}.
 \subsubsection{Test}
-All'interno della \textit{pipeline} della \gls{cig} vi era l'esecuzione automatica delle varie tipologie di \textit{test} (per esempio test di unità e \textit{test} di integrazione). Poiché il progetto da me sviluppato interagiva con molte parti dell'architettura di \textbf{Zextras}, ho scritto solo \textit{test} di integrazione. I \textit{test} sono parte fondamentale dello sviluppo \textit{software} e meritano di essere progettati e mantenuti allo stesso modo del codice di produzione. Per fare ciò, ho utilizzato due strumenti:
+All'interno della \textit{pipeline} della \gls{cig} vi era l'esecuzione automatica delle varie tipologie di \textit{test} (per esempio \textit{test} di unità e \textit{test} di integrazione). Poiché il progetto da me sviluppato interagiva con molte parti dell'architettura di \textbf{Zextras}, ho scritto solo \textit{test} di integrazione. I \textit{test} sono parte fondamentale dello sviluppo \textit{software} e meritano di essere progettati e mantenuti allo stesso modo del codice di produzione. Per fare ciò, ho utilizzato due strumenti:
 \begin{itemize}
     \item \textbf{Mockito}: è un \gls{frameworkg} che facilita la scrittura dei \textit{test} in \textit{Java}; 
     \item \textbf{Guice}: è un \gls{frameworkg} \gls{opensg} per il linguaggio \textit{Java}, sviluppato da \textbf{Google}, che permette di applicare in modo semplice e scalabile la \gls{depinjg}.
@@ -267,9 +297,11 @@ Di seguito una tabella con alcuni di essi:
         IT07 & Se un utente tenta di autenticarsi da \gls{okta} per la prima volta, gli viene creato un nuovo \textit{account} su \gls{zcsg}, associtato al profilo \gls{okta} & \textcolor{ForestGreen}{Superato}\\ \hline
         IT10 & Se l'utente tenta di accedere a \gls{zcsg} senza essere autenticato su \gls{okta}, viene reindirizzato sulla pagina di \textit{login} di \gls{okta} & \textcolor{ForestGreen}{Superato}\\ \hline
     \end{tabular}
-    \caption{Tabella dei test di integrazione}
+    \caption{Tabella parziale dei test di integrazione}
     \end{table}
 \end{center}
+
+I \textit{test} da me progettati e implementati erano in numero sufficiente secondo il parere del \textit{team}, tuttavia il fatto di aver introdotto la \gls{libg} descritta nella sezione \secref{sec:libreria} mi ha portato ad avere una copertura del codice piuttosto bassa, circa del 40\%. Questo perché il codice presente nella \gls{libg} offriva molteplici funzionalità che non ho avuto bisogno di utilizzare. Ai fini qualitativi è comunque accettabile perché per motivi di tempo non c'è stata la possibilità di testare a fondo il modulo \textit{software} introdotto.
 
 \subsubsection{Code review}
 Le \gls{codereviewg} rappresentano un altro strumento di verifica, in questo caso non automatica. Ad ogni nuova \textit{pull request} sul \gls{repositoryg} vengono assegnati dei revisori, con il compito di analizzare il codice scritto da un altro membro del \textit{team}. Se il codice rispetta gli standard di qualità, la \textit{pull request} viene approvata con conseguente \textit{merge} sul \textit{branch} principale del \gls{repositoryg}, altrimenti l'autore del codice deve risolvere quanto segnalato dai revisori prima di poter sottoporre il codice ad una nuova revisione. Le \gls{codereviewg} sono molto utili sia per assicurare che il codice scritto sia conforme alle norme di codifica, sia per confrontare la soluzione implementata con il resto del \textit{team}.
@@ -294,4 +326,5 @@ L'ultimo incontro si è tenuto il giorno 6/12/2019 a cui hanno partecipato:
             \item Il \textit{team} di sviluppo con il \textit{tutor} aziendale;
             \item Il responsabile di un altro \textit{team};
     \end{itemize}
-Durante questa riunione ho mostrato il sistema di autenticazione in azione e abbiamo discusso alcuni miglioramenti da apportare. In questa sede il responsabile tecnico ha fatto delle nuove richieste, soprattutto per quanto riguarda la configurazione, al fine di facilitare il lavoro dei sistemisti. Dopo aver messo a punto le ultime sistemazioni e aver accertato che il prodotto fosse conforme alle aspettative iniziali, il giorno 11/12/2019, abbiamo rilasciato il prodotto in produzione per l'utilizzo aziendale. \\
+Durante questa riunione ho mostrato il sistema di autenticazione in azione e abbiamo attestato il soddisfacimento dei requisiti stabiliti durante l'attività di analisi, descritta nella sezione \secref{sec:requisiti}. Su un totale di 17 requisiti, ne ho implementati 16, circa il 94\%, considerano che uno degli obiettivi inizialmente prefissati è stato in seguito rimosso.
+Inoltre abbiamo discusso circa alcuni miglioramenti da apportare all'applicazione. In questa sede il responsabile tecnico ha fatto delle nuove richieste, soprattutto per quanto riguarda la configurazione, al fine di facilitare il lavoro dei sistemisti. Dopo aver messo a punto le ultime sistemazioni e aver accertato che il prodotto fosse conforme alle aspettative iniziali e quelle emerse in seguito, il giorno 11/12/2019, abbiamo rilasciato il prodotto in produzione per l'utilizzo aziendale. \\

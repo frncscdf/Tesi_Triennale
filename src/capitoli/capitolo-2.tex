@@ -28,7 +28,7 @@
         \item sincronizzazione dei gruppi di \gls{okta} ai quali un utente appartiene, con liste di distribuzione e classi di servizio di \gls{zcsg}.
     \end{itemize}
     Il fine di questo progetto era quello di uniformare il metodo di autenticazione di \gls{zcsg} rispetto a tutti gli servizi utilizzati dall'azienda e soprattutto avere un sistema personalizzato e configurabile che permette di automatizzare alcune operazioni ripetitive e dispendiose in termini di tempo.
-    Per poter proporre una soluzione conforme alle esigenze emerse, ho dovuto per prima cosa condurre uno studio e un'analisi dei protocolli di autenticazione presenti sul mercato. La seconda parte invece consisteva nella progettazione e implementazione del sistema, utilizzando il protocollo ritenuto più idoneo.
+    %Per poter proporre una soluzione conforme alle esigenze emerse, ho dovuto per prima cosa condurre uno studio e un'analisi dei protocolli di autenticazione presenti sul mercato. La seconda parte invece consisteva nella progettazione e implementazione del sistema, utilizzando il protocollo ritenuto più idoneo.
     
     \begin{figure}[ht]
         \centering
@@ -39,35 +39,11 @@
         \label{fig: Single Sign-On}
     \end{figure}
 
-
-    \subsection{Analisi stato dell'arte protocolli di autenticazione}\label{sec:att_analisi}
-    %Descrizione dell'attività di analisi e di studio dei protocolli di autenticazione che ho dovuto condurre come prima attività durante lo stage.
-    La prima attività che ho dovuto svolgere era la ricerca e lo studio dei protocolli di autenticazione più diffusi e utilizzati sul mercato. L'azienda conosceva già alcuni di questi, ma voleva avere un'analisi approfondita e degli esempi del loro utilizzo. Inoltre poteva rivelarsi una valida occasione per scoprire nuovi possibili protocolli adatti all'implementazione del sistema di autenticazione. \\
-    L'azienda ha quindi richiesto di redigere un documento che riportasse tutti i risultati delle mie ricerche, in particolare l'analisi dei pro e dei contro di ciascun protocollo e la sua applicabilità al problema da risolvere.
-
-    \subsection{Progettazione di un sistema di autenticazione personalizzato}
-        In seguito all'analisi svolta, il secondo obiettivo dello stage era la progettazione, seguita dall'implementazione, di un sistema di autenticazione per \gls{zcsg} utilizzando il protocollo scelto da me, guidato dal \textit{team} di sviluppo. Il sistema di autenticazione doveva essere in grado di:
-        \begin{itemize}
-            \setlength\itemsep{0em}
-            \item utilizzare \gls{okta} come \gls{idpg};
-            \item supportare altri \gls{idpg} che utilizzato lo stesso protocollo;
-            \item supportare \gls{zcsg} tramite il \gls{ssog} di \gls{okta} rendendo opzionale l'accesso tramite \textit{email} e \textit{password};
-            \item garantire sicurezza.
-        \end{itemize}
-    \begin{figure}[ht]
-        %\setlength{\textfloatsep}{1pt}
-        %\setlength{\belowcaptionskip}{1pt}
-        \centering
-        \includegraphics[width=0.75\textwidth]{immagini/rd.jpg}
-        \caption{\textit{Research \& Development}}
-        \textbf{Fonte}:
-        \href{https://youteam.io/blog/research-and-development-the-fourth-pillar-of-software-development/}{youteam.io}
-        \label{fig: Research & Development}
-    \end{figure}
+\newpage
 
 \section{Vincoli}
     \subsection{Vincoli metodologici}
-        Per lo svolgimento dell'attività di stage è stato deciso, in comune accordo con il \textit{tutor}, che il modo più efficace per portarla a termine, fosse lavorando presso la sede aziendale. La prima motivazione deriva dalla metodologia di sviluppo adottata, descritta nella sezione \secref{sec:met_svilpuppo}, la quale è fortemente incentrata sulla comunicazione e sul confronto frequente con tutti i membri nel \textit{team}. Inoltre, poiché sarei stato affiancato da alcuni \textit{senior developer} si trattava di un'ottima occasione per apprendere il più possibile da professionisti nel settore.
+        Per lo svolgimento dell'attività di stage ho deciso, in comune accordo con il \textit{tutor}, che il modo più efficace per portarla a termine, fosse lavorando presso la sede aziendale. La prima motivazione deriva dalla metodologia di sviluppo adottata, descritta nella sezione \secref{sec:met_svilpuppo}, la quale è fortemente incentrata sulla comunicazione e sul confronto frequente con tutti i membri nel \textit{team}. Inoltre, poiché sarei stato affiancato da alcuni \textit{senior developer} si trattava di un'ottima occasione per apprendere il più possibile da professionisti nel settore.
         Oltre agli incontri di allineamento giornalieri, il \textit{Project Manager} ha stabilito che ci sarebbero stati degli incontri formali, insieme al \textit{tutor} aziendale, per fare il punto della situazione. Nella fase conclusiva del progetto era inoltre prevista una \textit{\gls{demog}} a cui avrebbero presenziato altre figure aziendali appartententi a diversi reparti.
         %\begin{itemize}
         %    \item il \textit{CEO} dell'azienda;

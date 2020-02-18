@@ -127,7 +127,7 @@ I due protocolli individuati erano \textit{\gls{samlg}} e \gls{openidg}. Di segu
         \item i \textit{\gls{jsong} Web Token (JWT)} utilizzati per rappresentare le informazioni dell'autenticazione sono in un formato portabile e moderno e supportano diversi algoritmi di crittografia;
         \item essendo basato su un altro protocollo chiamato \gls{oauthg}, il quale funziona su applicazioni native per dispositivi mobili, permette di essere implementato facilmente su di esse;
         \item essendo basato su un protocollo di autorizzazione, citato al punto precedente, con \gls{openidg} si ha un singolo protocollo per autenticazione e autorizzazione;
-        \item Facile da implementare.
+        \item facile da implementare.
     \end{itemize}
     \subsubsection{Svantaggi}
     \begin{itemize}
@@ -228,8 +228,8 @@ Una volta discussa e approvata dal \textit{team} e dal \textit{Project Manager} 
 La configurazione di tutto il sistema di autenticazione l'ho realizzata attraverso la configurazione di \gls{zcsg}, la quale offre la possibilità di definire attributi di diversi tipi, tra cui valori binari (vero o falso), stringhe e oggetti \textit{\gls{jsong}}. Le mappature descritte nella sezione precedente e illustrate nelle figure \secref{fig: Mappatura classe di servizio} e \secref{fig: Mappatura liste di distribuzione} erano configurate attraverso due attributi specifici. Oltre a questi ne ho definiti altri, tra cui:
 \begin{itemize}
     \item configurazione del protocollo \textit{\gls{samlg}} (informazioni riguardanti \textit{\gls{idpg}} e \textit{\gls{spg}});
-    \item cttivazione e disattivazione della creazione automatica di un nuovo \textit{account}  su \gls{zcsg};
-    \item cttivazione e disattivazione della sincronizzazione dei gruppi \gls{okta} ai quali appartiene un utente, con \gls{cosg} e \gls{distlistg} ad ogni accesso tramite \textit{\gls{samlg}}.
+    \item attivazione e disattivazione della creazione automatica di un nuovo \textit{account}  su \gls{zcsg};
+    \item attivazione e disattivazione della sincronizzazione dei gruppi \gls{okta} ai quali appartiene un utente, con \gls{cosg} e \gls{distlistg} ad ogni accesso tramite \textit{\gls{samlg}}.
 \end{itemize}
 Questi attributi vengono letti dall'\textit{handler} \textit{\gls{httpg}} ogni volta che il sistema di autenticazione riceve una richiesta.
 
@@ -240,7 +240,7 @@ Per poter estrapolare i dati in arrivo dalla \textit{SAML Response} di \gls{okta
 
     \begin{figure}[ht]
         \centering
-        \includegraphics[width=1\textwidth]{immagini/saml_response.png}
+        \includegraphics[width=0.90\textwidth]{immagini/saml_response.png}
         \caption{\textit{SAML Response}}
         \textbf{Fonte}:
         \href{https://www.samltool.com/generic_sso_res.php}{samltool.com}
@@ -248,9 +248,6 @@ Per poter estrapolare i dati in arrivo dalla \textit{SAML Response} di \gls{okta
     \end{figure}
     
 Per fare ciò ho incluso una \gls{libg} \textit{\gls{opensg}} che, data una \textit{SAML Response}, restituiva una \gls{struttdatig} contenente i dati necessari, estrapolati dai \textit{tag} \texttt{<saml:AttributeValue>} come illustrato in figura \secref{fig: SAML Response}.
-
-\newpage
-
 Tuttavia, l'introduzione di questa libreria ha portato alla luce nuove problematiche. Questa, utilizzava la gestione delle richieste e risposte \textit{\gls{httpg}} tramite le classi della \textit{\gls{apig}} di \textit{Java}, in particolare utilizzava il \textit{package} \texttt{javax.servlet.http} \footnote{\url{https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/package-summary.html}}. \textbf{Zextras}, invece, utilizzava un \textit{\gls{frameworkg}} chiamato \textit{Netty} \footnote{\url{https://netty.io/}}, pertanto c'era una situazione di incompatibilità. Ho quindi dovuto provvedere ad adattare tutti i metodi della \gls{libg} affinché fossero compatibili con il \textit{\gls{frameworkg}} utilizzato dall'azienda. \\
 
 \section{Documentazione}
@@ -259,7 +256,8 @@ La documentazione ha fatto parte dei miei compiti sin dall'inizio dell'attività
 \subsection{Documenti tecnici e manuali}
 Durante l'attività descritta nella sezione \secref{sec:att_analisi}, ho documentato tutti i risultati dei miei studi in un documento che illustrava tutti i protocolli analizzati, riportando le informazioni tecniche essenziali e discutendone vantaggi e svantaggi per ciascuno di essi. Questo documento è stato poi aggiornato fino al momento in cui, insieme al \textit{team}, abbiamo scelto il protocollo da utilizzare. \\
 Per quanto riguarda la documentazione del prodotto sviluppato, ho scritto un manuale contenente informazioni circa la progettazione del sistema di autenticazione e i passi per poterlo configurare correttamente. Il documento, accessibile a tutti i reparti dell'azienda, era necessario ai sistemisti per poter installare e opportunamente configurare il sistema e al \textit{team}, nel caso in futuro dovesse estenderlo o apportare delle correzioni.
-Lo strumento utilizzato per la gestione di questi documenti è \textbf{Confluence}, come descritto nella sezione \secref{sec:doc}.
+Lo strumento utilizzato per la gestione di questi documenti è \textbf{Confluence}, accennato nella sezione \secref{sec:doc}. \\
+Questo \textit{software} fa parte della \textit{suite} di \textbf{Atlassian}, sulla quale si basa la maggior parte degli strumenti aziendali. In particolare ogni \textit{team} possiede un suo spazio collaborativo in cui gestisce i documenti riguardanti lo sviluppo dei progetti su cui lavora. Per esempio i documenti da me scritti facevano parte dello spazio \textit{backend}, ma avevo la possibilità di visionare e commentare anche i documenti appartenenti al \textit{front-end} perché spesso c'è la necessità di collaborare sullo stesso progetto. Infatti, nell'implementazione di una delle \textit{\gls{apig}} di \textbf{Zextras Suite} il \textit{team} che si è occupato di scrivere il codice del \textit{backend} ha avuto la necessità di confrontarsi, per definire e quindi documentare, con il \textit{front-end} il formato dei messaggi scambiati dalle due parti dell'applicazione.
 
 \subsection{Codice sorgente}
 La documentazione del codice è fondamentale per due motivi: spiegare sezioni di codice difficili da comprendere e facilitare la manutenzione a coloro che dovranno farla, soprattutto se verrà fatta da persone diverse dall'autore. Infatti in una \textit{Sprint Retrospective}, in particolare durante la scrittura dello \textit{Starfish Retrospective} (come descritto nella sezione \secref{sec:met_svilpuppo}) è emerso che tutto il \textit{team} avrebbe dovuto dedicare più tempo alla documentazione del codice, scrivendola secondo le regole del \gls{javadocg}.
